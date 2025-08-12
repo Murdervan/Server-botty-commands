@@ -8,14 +8,14 @@
   body {
     font-family: Arial, sans-serif;
     max-width: 700px;
-    margin: 2rem auto 6rem; /* ekstra margin-bottom til footer */
+    margin: 2rem auto 6rem;
     padding: 0 1rem;
-    background: #121212; /* mørk baggrund */
-    color: #eee; /* lys tekst */
+    background: #121212;
+    color: #eee;
   }
   h1, h2 {
     text-align: center;
-    color: #4f8ef7; /* lys blå */
+    color: #4f8ef7;
   }
   section {
     margin-bottom: 2rem;
@@ -25,25 +25,25 @@
     padding-left: 0;
   }
   li {
-    background: #1e1e1e; /* mørk grå baggrund på list items */
+    background: #1e1e1e;
     margin-bottom: 0.5rem;
     padding: 0.8rem 1rem;
     border-radius: 6px;
     box-shadow: 0 1px 3px rgb(0 0 0 / 0.5);
   }
   code {
-    background: #333; /* mørk baggrund i kodeblokke */
+    background: #333;
     padding: 0.1rem 0.3rem;
     border-radius: 4px;
     font-family: monospace;
-    color: #ffd966; /* gylden tekst i kode */
+    color: #ffd966;
   }
   footer {
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    background: #5865f2; /* Discord-blå */
+    background: #5865f2;
     color: white;
     text-align: center;
     padding: 0.8rem 1rem;
@@ -66,52 +66,60 @@
   <p style="text-align:center; font-style: italic;">All available commands grouped and sorted</p>
 
   <section>
+    <h2>🎯 HOW TO PLAY</h2>
+    <ul>
+      <li><strong>Blackjack:</strong> type <code>hit</code> for a card, <code>stand</code> to stay.</li>
+      <li><strong>Roulette:</strong> <code>!roulette [bet] [red/black/green/number]</code></li>
+      <li><strong>Coinflip:</strong> <code>!coinflip [bet]</code>, choose heads/tails.</li>
+      <li><strong>Roll:</strong> <code>!roll [number of sides]</code></li>
+    </ul>
+  </section>
+
+  <section>
     <h2>📜 Info</h2>
     <ul>
       <li><code>!joinleaveinfo</code> — Shows recent join/leave events from the log channel</li>
-      <li><code>!roleinfo [role]</code> — Shows info about a role</li>
+      <li><code>!roleinfo [role name]</code> — Shows info about a role</li>
       <li><code>!serverinfo</code> — Shows info about the server</li>
-      <li><code>!userinfo [user]</code> — Shows info about a user</li>
+      <li><code>!userinfo [username]</code> — Shows info about the user</li>
     </ul>
   </section>
 
   <section>
     <h2>⚙️ Moderation</h2>
     <ul>
-      <li><code>!autorole add/remove [role]</code> — Manage autoroles for new members</li>
-      <li><code>!ban @user [reason]</code> — Ban a user</li>
-      <li><code>!clean [amount]</code> — Clean messages in channel</li>
-      <li><code>!kick @user [reason]</code> — Kick a user</li>
-      <li><code>!mute @user [duration]</code> — Mute a user</li>
-      <li><code>!unmute @user</code> — Unmute a user</li>
+      <li><code>!autorole add/remove</code> — Manage autoroles (Subcommands: add, remove)</li>
+      <li><code>!ban @username [reason]</code> — Ban a user</li>
+      <li><code>!clean [amount]</code> — Clear messages in the channel</li>
+      <li><code>!kick @username [reason]</code> — Kick a user</li>
+      <li><code>!mute @username 10m</code> — Mute a user</li>
+      <li><code>!unmute @username</code> — Unmute a user</li>
     </ul>
   </section>
 
   <section>
     <h2>💰 Economy</h2>
     <ul>
-      <li><code>!addmoney @user [amount]</code> — Add money to a user (admin only)</li>
-      <li><code>!bal [user]</code> — Check balance</li>
+      <li><code>!addmoney</code> — Add money to a user (admin only)</li>
+      <li><code>!bal</code> — Check balance for yourself or another user</li>
     </ul>
   </section>
 
   <section>
     <h2>🎮 Games</h2>
     <ul>
-      <li><code>!blackjack [bet]</code> — Play blackjack</li>
-      <li><code>!coinflip [bet]</code> — Coinflip game</li>
-      <li><code>!roll [sides]</code> — Roll a dice</li>
-      <li><code>!roulette [bet] [red/black/green/number]</code> — Play roulette</li>
-      <li><code>!rps [rock/paper/scissors]</code> — Play Rock-Paper-Scissors</li>
+      <li><code>!blackjack</code> — Play blackjack with betting</li>
+      <li><code>!coinflip</code> — Flip a coin with betting</li>
+      <li><code>!roll</code> — Roll a die</li>
+      <li><code>!roulette</code> — Play roulette with betting</li>
     </ul>
   </section>
 
   <section>
-    <h2>⏰ Miscellaneous</h2>
+    <h2>⏰ Others</h2>
     <ul>
-      <li><code>!invite_statbot</code> — Get invite link for StatBot</li>
-      <li><code>!remind [time] [message]</code> — Set a reminder</li>
-      <li><code>!help</code> — Show this command list</li>
+      <li><code>!invite_statbot</code> — Get the StatBot invite link</li>
+      <li><code>!remind</code> — Set a reminder. Usage: <code>!remind 10m message</code></li>
     </ul>
   </section>
 
@@ -120,3 +128,4 @@
   </footer>
 </body>
 </html>
+
