@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>Server Botty Commands</title>
+<style>
+body { background-color: #121212; color: #f5f5f5; font-family: Arial, sans-serif; margin: 0; padding: 0; }
+h1, h2 { color: #3b82f6; text-align: center; }
+section { max-width: 900px; margin: 2rem auto; padding: 1rem; background: #1e1e1e; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.5);}
+ul { list-style: none; padding: 0; }
+li { background: #2a2a2a; margin: 0.5rem 0; padding: 0.8rem; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.3);}
+code { background: #000; color: #00ffcc; padding: 0.2rem 0.4rem; border-radius: 4px; font-family: monospace;}
+footer { background: #7289da; color: white; text-align: center; padding: 1rem; position: fixed; bottom: 0; width: 100%; box-shadow: 0 -2px 8px rgba(0,0,0,0.5);}
+footer a { color: #ffe; text-decoration: none; font-weight: bold;}
+footer a:hover { text-decoration: underline;}
+</style>
+</head>
+<body>
+<h1>🤖 Server Botty — Command Overview</h1>
+<p style='text-align:center; font-style: italic;'>All available commands grouped by category</p>
+<section>
+<h2>📜 Info</h2>
+<ul>
+<li><code>!userinfo</code> — Show info about a user. Usage: !userinfo @user</li>
+<li><code>!roleinfo</code> — Show info about a role. Usage: !roleinfo [role name]</li>
+<li><code>!serverinfo</code> — Show info about the server</li>
+<li><code>!joinleaveinfo</code> — Show join/leave statistics for the server</li>
+</ul>
+</section>
+<section>
+<h2>⚙️ Moderation</h2>
+<ul>
+<li><code>!autorole</code> — Manage autoroles. Usage: !autorole add/remove</li>
+<li><code>!warning</code> — Warn a user. Usage: !warning @user [reason]</li>
+<li><code>!ban</code> — Ban a user. Usage: !ban @user [reason]</li>
+<li><code>!kick</code> — Kick a user. Usage: !kick @user [reason]</li>
+<li><code>!mute</code> — Mute a user. Usage: !mute @user 10m</li>
+<li><code>!unmute</code> — Unmute a user. Usage: !unmute @user</li>
+<li><code>!clean</code> — Clean messages. Usage: !clean [amount|ALL]</li>
+</ul>
+</section>
+<section>
+<h2>💰 Economy</h2>
+<ul>
+<li><code>!bal</code> — Check your balance or another user's balance</li>
+<li><code>!addmoney</code> — Add coins to a user (admin only)</li>
+<li><code>!drop</code> — Drop coins for members with the 'Casino' role (any Casino member can trigger)</li>
+</ul>
+</section>
+<section>
+<h2>🎰 Casino Games</h2>
+<ul>
+<li><code>!blackjack</code> — Play blackjack with betting. Usage: !blackjack [bet]</li>
+<li><code>!roulette</code> — Play roulette with betting. Usage: !roulette [bet] [red/black/green/number]</li>
+<li><code>!coinflip</code> — Flip a coin with betting. Usage: !coinflip [bet]</li>
+<li><code>!roll</code> — Roll a die. Usage: !roll [sides]</li>
+</ul>
+</section>
+<section>
+<h2>🎮 Games & Quiz</h2>
+<ul>
+<li><code>!reverse</code> — Reverse your text. Usage: !reverse [text]</li>
+<li><code>!fakenews</code> — True/False quiz. Answer with ✅ or ❌ (5 questions).</li>
+<li><code>!memory</code> — Emoji memory game (Simon). Usage: !memory</li>
+<li><code>!flagquiz</code> — Name the flag! 10 rounds.</li>
+</ul>
+</section>
+<section>
+<h2>🔍 Search & Info</h2>
+<ul>
+<li><code>!pris</code> — Price search (placeholder). Usage: !pris [query]</li>
+<li><code>!film</code> — (coming soon)</li>
+<li><code>!serie</code> — (coming soon)</li>
+<li><code>!gameinfo</code> — Get Steam game information. Usage: !gameinfo [title]</li>
+<li><code>!cur</code> — Convert currency rates. Usage: !cur [amount] [FROM] [TO]</li>
+<li><code>!crypto</code> — (coming soon)</li>
+<li><code>!track</code> — Track packages using tracking number. Usage: !track [tracking-number]</li>
+</ul>
+</section>
+<section>
+<h2>😂 Fun & Social</h2>
+<ul>
+<li><code>!roast</code> — Light roast (for fun)</li>
+<li><code>!overdriv</code> — Overdriv en sætning. Usage: !overdriv [tekst]</li>
+<li><code>!systemmsg</code> — Random system message</li>
+<li><code>!pause</code> — Dramatic pause... then a punchline. Usage: !pause [message]</li>
+<li><code>!burger</code> — Builds a random burger</li>
+</ul>
+</section>
+<section>
+<h2>⏰ Misc</h2>
+<ul>
+<li><code>!remind</code> — Set a reminder. Usage: !remind [time] [message] (e.g., !remind 5m Take a break)</li>
+<li><code>!invite_statbot</code> — Get the StatBot invite link</li>
+<li><code>!report</code> — Report a user to the staff channel. Usage: !report @user [reason]</li>
+<li><code>!helpadmin</code> — Show admin-only commands</li>
+<li><code>!helpme</code> — Show this help menu with all commands (English)</li>
+</ul>
+</section>
+<section>
+<h2>📚 Other Commands</h2><ul>
+<li><code>!birthday</code> — Birthday tools. Usage: !birthday set YYYY-MM-DD</li>
+</ul></section>
+<footer>Made by Murdervan — <a href='https://discord.gg/9NdbUZc8j5' target='_blank'>Join my Discord</a></footer>
+</body></html>
