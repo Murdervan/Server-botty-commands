@@ -5,27 +5,120 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0'>
 <title>Server Botty Commands</title>
 <style>
-body { background-color: #121212; color: #f5f5f5; font-family: Arial, sans-serif; margin: 0; padding: 0; }
-h1, h2 { color: #3b82f6; text-align: center; }
-section { max-width: 900px; margin: 2rem auto; padding: 1rem; background: #1e1e1e; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.5);}
-ul { list-style: none; padding: 0; }
-li { background: #2a2a2a; margin: 0.5rem 0; padding: 0.8rem; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.3);}
-code { background: #000; color: #00ffcc; padding: 0.2rem 0.4rem; border-radius: 4px; font-family: monospace;}
-footer { background: #7289da; color: white; text-align: center; padding: 1rem; position: fixed; bottom: 0; width: 100%; box-shadow: 0 -2px 8px rgba(0,0,0,0.5);}
-footer a { color: #ffe; text-decoration: none; font-weight: bold;}
-footer a:hover { text-decoration: underline;}
+/* ---------- Base Layout ---------- */
+body {
+  background-color: #121212;
+  color: #f5f5f5;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* ---------- Headings ---------- */
+h1, h2 {
+  color: #3b82f6;
+  text-align: center;
+}
+h1 {
+  margin-top: 1rem;
+  font-size: 2rem;
+}
+h2 {
+  margin-bottom: 1rem;
+}
+
+/* ---------- Sections ---------- */
+section {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem 1.5rem;
+  background: #1e1e1e;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+li {
+  background: #2a2a2a;
+  margin: 0.5rem 0;
+  padding: 0.8rem;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+code {
+  background: #000;
+  color: #00ffcc;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  background: #7289da;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  width: 100%;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.5);
+  position: relative;
+  bottom: 0;
+}
+footer a {
+  color: #ffe;
+  text-decoration: none;
+  font-weight: bold;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Links ---------- */
+a {
+  color: #3b82f6;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Mobile Optimization ---------- */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.6rem;
+    margin: 1rem 0;
+  }
+  section {
+    margin: 1rem;
+    padding: 1rem;
+  }
+  li {
+    font-size: 0.95rem;
+    padding: 0.7rem;
+  }
+  footer {
+    font-size: 0.9rem;
+    position: static; /* prevent overlap */
+    margin-top: 2rem;
+  }
+}
 </style>
 </head>
+
 <body>
 <h1>🤖 Server Botty — Command Overview</h1>
-<p style='text-align:center; font-style: italic;'>All available commands grouped by category</p>
+<p style='text-align:center; font-style: italic;'>For help join: <a href='https://discord.gg/9NdbUZc8j5' target='_blank'>https://discord.gg/9NdbUZc8j5</a></p>
 
 <section>
 <h2>🎲 HOW TO PLAY</h2>
 <ul>
-<li><strong>Blackjack:</strong> react 👊 to hit, ✋ to stand, 💰 to doubledown, ✌ to split.</li>
-<li><strong>Roulette:</strong> <code>!roulette [bet] [red/black/green/number]</code></li>
-<li><strong>Coinflip:</strong> <code>!coinflip [bet]</code>, choose via reactions.</li>
+<li><strong>Blackjack:</strong> react 👊 to Hit, ✋ to Stand, 💰 to Double Down, ✌ to Split.</li>
+<li><strong>Roulette:</strong> <code>!roulette [bet] [red/black/green/number]</code> — bet on a colour or specific number.</li>
+<li><strong>Coinflip:</strong> <code>!coinflip [bet]</code> — choose your side via reactions (heads/tails).</li>
 </ul>
 </section>
 
@@ -34,9 +127,9 @@ footer a:hover { text-decoration: underline;}
 <ul>
 <li><code>!addmoney</code> — Add coins to a user (admin only)</li>
 <li><code>!bal</code> — Check your balance or another user's balance</li>
-<li><code>!blackjack</code> — Play blackjack with betting. Usage: !blackjack [bet] - INCL SPLIT AND DOUBLEDOWN</li>
-<li><code>!coinflip</code> — Flip a coin with betting. Usage: !coinflip [bet]</li>
-<li><code>!drop</code> — Drop coins for members with the 'Casino' role (any Casino member can trigger)</li>
+<li><code>!blackjack</code> — Play blackjack with betting. Usage: !blackjack [bet] (includes Split & Double Down)</li>
+<li><code>!coinflip</code> — Flip a coin with betting. Usage: !coinflip [bet] (choose via reactions)</li>
+<li><code>!drop</code> — Drop coins for members with the 'Casino' role (embed only)</li>
 <li><code>!roll</code> — Roll a die. Usage: !roll [sides]</li>
 <li><code>!roulette</code> — Play roulette with betting. Usage: !roulette [bet] [red/black/green/number]</li>
 </ul>
@@ -55,8 +148,8 @@ footer a:hover { text-decoration: underline;}
 <section>
 <h2>🎮 Games & Quiz (no betting)</h2>
 <ul>
-<li><code>!fakenews</code> — True/False quiz. Answer with ✅ or ❌ (5 questions).</li>
-<li><code>!flagquiz</code> — Name the flag! 10 rounds.</li>
+<li><code>!fakenews</code> — True/False quiz. Answer with ✅ or ❌ (5 questions)</li>
+<li><code>!flagquiz</code> — Name the flag! 10 rounds</li>
 <li><code>!memory</code> — Emoji memory game (Simon). Usage: !memory</li>
 <li><code>!reverse</code> — Reverse your text. Usage: !reverse [text]</li>
 </ul>
@@ -65,19 +158,15 @@ footer a:hover { text-decoration: underline;}
 <section>
 <h2>🔍 Search & Information</h2>
 <ul>
-<li><code>!cur</code> — Convert currency rates. Usage: !cur [amount] [FROM] [TO]</li>
 <li><code>!gameinfo</code> — Get Steam game information. Usage: !gameinfo [title]</li>
-<li><code>!track</code> — Track packages using tracking number. Usage: !track [tracking-number]</li>
 </ul>
 </section>
 
 <section>
 <h2>😂 Fun & Social</h2>
 <ul>
-<li><code>!burger</code> — Builds a random burger</li>
-<li><code>!overdriv</code> — Overdriv en sætning. Usage: !overdriv [tekst]</li>
-<li><code>!pause</code> — Dramatic pause... then a punchline. Usage: !pause [message]</li>
-<li><code>!roast</code> — Light roast (for fun)</li>
+<li><code>!overdriv</code> — Exaggerate a sentence. Usage: !overdriv [text]</li>
+<li><code>!roast</code> — Light roast (for fun). Use !roast @user or !roast to roast yourself</li>
 <li><code>!systemmsg</code> — Random system message</li>
 </ul>
 </section>
@@ -94,7 +183,7 @@ footer a:hover { text-decoration: underline;}
 </section>
 
 <section>
-<h2>🤖 Automatic Log Actions</h2>
+<h2>🤖 Automatic Log Actions (info)</h2>
 <ul>
 <li>Welcome messages</li>
 <li>Birthday pings</li>
@@ -103,9 +192,17 @@ footer a:hover { text-decoration: underline;}
 <li>Laughs on 3+ 😂/🤣</li>
 <li>Rare loot drops</li>
 <li>'Shhh mode' anti-spam</li>
-<li>Dramatic pauses</li>
 </ul>
+<p><strong>Birthday pings:</strong> Use <code>!birthday set YYYY-MM-DD</code> to register your birthday. The bot will ping you on that date (local server time) with a celebration message.<br>
+To list saved birthdays use <code>!birthday list</code>. Server staff can view the birthday list with <code>!birthday list</code> (requires Manage Messages permission).</p>
+<p><em>Tip:</em> consider muting the log channel if it gets too noisy.</p>
 </section>
+
+<footer>
+Server Botty — Type <code>!helpme</code> for this menu (embed only)
+</footer>
+</body>
+</html>
 
 <footer>I'm made by Murdervan — <a href='https://discord.gg/9NdbUZc8j5' target='_blank'>Join my Discord</a></footer>
 </body>
