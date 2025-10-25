@@ -83,15 +83,17 @@ footer a:hover {
 </head>
 <body>
 <h1>🤖 Server Botty — Command Overview</h1>
-<p style='text-align:center; font-style: italic;'>All available commands grouped by category</p>
+<p style='text-align:center; font-style: italic;'>Commands website: <a href='https://murdervan.github.io/Server-botty-commands' target='_blank'>https://murdervan.github.io/Server-botty-commands</a></p>
+<p style='text-align:center; font-style: italic;'>For help join: <a href='https://discord.gg/9NdbUZc8j5' target='_blank'>https://discord.gg/9NdbUZc8j5</a></p>
 
 <section>
 <h2>🎲 HOW TO PLAY</h2>
 <ul>
-<li><strong>Blackjack:</strong> react 👊 to hit, ✋ to stand, 💰 to doubledown, ✌ to split.</li>
-<li><strong>Roulette:</strong> <code>!roulette [bet] [red/black/green/number]</code></li>
-<li><strong>Coinflip:</strong> <code>!coinflip [bet]</code>, choose via reactions.</li>
+<li><strong>Blackjack:</strong> react 👊 to Hit, ✋ to Stand, 💰 to Double Down, ✌ to Split.</li>
+<li><strong>Roulette:</strong> <code>!roulette [bet] [red/black/green/number]</code> — bet on a colour or specific number.</li>
+<li><strong>Coinflip:</strong> <code>!coinflip [bet]</code> — choose your side via reactions (heads/tails).</li>
 </ul>
+<p style='font-style: italic;'>Below are available command categories and usage — all commands are English-only.</p>
 </section>
 
 <section>
@@ -99,9 +101,9 @@ footer a:hover {
 <ul>
 <li><code>!addmoney</code> — Add coins to a user (admin only)</li>
 <li><code>!bal</code> — Check your balance or another user's balance</li>
-<li><code>!blackjack</code> — Play blackjack with betting. Usage: !blackjack [bet] - INCL SPLIT AND DOUBLEDOWN</li>
-<li><code>!coinflip</code> — Flip a coin with betting. Usage: !coinflip [bet]</li>
-<li><code>!drop</code> — Drop coins for members with the 'Casino' role (any Casino member can trigger)</li>
+<li><code>!blackjack</code> — Play blackjack with betting. Usage: !blackjack [bet] (includes Split & Double Down)</li>
+<li><code>!coinflip</code> — Flip a coin with betting. Usage: !coinflip [bet] (choose via reactions)</li>
+<li><code>!drop</code> — Drop coins for members with the 'Casino' role (embed only)</li>
 <li><code>!roll</code> — Roll a die. Usage: !roll [sides]</li>
 <li><code>!roulette</code> — Play roulette with betting. Usage: !roulette [bet] [red/black/green/number]</li>
 </ul>
@@ -120,8 +122,8 @@ footer a:hover {
 <section>
 <h2>🎮 Games & Quiz (no betting)</h2>
 <ul>
-<li><code>!fakenews</code> — True/False quiz. Answer with ✅ or ❌ (5 questions).</li>
-<li><code>!flagquiz</code> — Name the flag! 10 rounds.</li>
+<li><code>!fakenews</code> — True/False quiz. Answer with ✅ or ❌ (5 questions)</li>
+<li><code>!flagquiz</code> — Name the flag! 10 rounds</li>
 <li><code>!memory</code> — Emoji memory game (Simon). Usage: !memory</li>
 <li><code>!reverse</code> — Reverse your text. Usage: !reverse [text]</li>
 </ul>
@@ -130,19 +132,15 @@ footer a:hover {
 <section>
 <h2>🔍 Search & Information</h2>
 <ul>
-<li><code>!cur</code> — Convert currency rates. Usage: !cur [amount] [FROM] [TO]</li>
 <li><code>!gameinfo</code> — Get Steam game information. Usage: !gameinfo [title]</li>
-<li><code>!track</code> — Track packages using tracking number. Usage: !track [tracking-number]</li>
 </ul>
 </section>
 
 <section>
 <h2>😂 Fun & Social</h2>
 <ul>
-<li><code>!burger</code> — Builds a random burger</li>
-<li><code>!overdriv</code> — Overdriv en sætning. Usage: !overdriv [tekst]</li>
-<li><code>!pause</code> — Dramatic pause... then a punchline. Usage: !pause [message]</li>
-<li><code>!roast</code> — Light roast (for fun)</li>
+<li><code>!overdriv</code> — Exaggerate a sentence. Usage: !overdriv [text]</li>
+<li><code>!roast</code> — Light roast (for fun). Use !roast @user or !roast to roast yourself</li>
 <li><code>!systemmsg</code> — Random system message</li>
 </ul>
 </section>
@@ -159,24 +157,14 @@ footer a:hover {
 </section>
 
 <section>
-<h2>🤖 Automatic Log Actions</h2>
-<ul>
-<li>Welcome messages</li>
-<li>Birthday pings</li>
-<li>Keyword triggers</li>
-<li>Random emoji reactions</li>
-<li>Laughs on 3+ 😂/🤣</li>
-<li>Rare loot drops</li>
-<li>'Shhh mode' anti-spam</li>
-<li>Dramatic pauses</li>
-</ul>
+<h2>🤖 Automatic Log Actions (info)</h2>
+<p>Welcome messages • Birthday pings • Keyword triggers • Random emoji reactions • Laughs on 3+ 😂/🤣 • Rare loot drops • 'Shhh mode' anti-spam</p>
+<p style='margin-top: 1rem;'><strong>Birthday pings:</strong> Use <code>!birthday set YYYY-MM-DD</code> to register your birthday. The bot will ping you on that date (local server time) with a celebration message. To list saved birthdays use <code>!birthday list</code>. Server staff can view the birthday list with <code>!birthday list</code> (requires Manage Messages permission).</p>
+<p style='font-style: italic; margin-top: 1rem;'>Tip: consider muting the log channel if it gets too noisy.</p>
 </section>
 
 <footer>
-Server Botty — Type <code>!helpme</code> for this menu (embed only)
+Server Botty — Type <code>!helpme</code> for this menu (embed only) • <a href='https://discord.gg/9NdbUZc8j5' target='_blank'>Join my Discord</a>
 </footer>
-</body>
-</html>
-ref='https://discord.gg/9NdbUZc8j5' target='_blank'>Join my Discord</a></footer>
 </body>
 </html>
