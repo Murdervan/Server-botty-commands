@@ -35,7 +35,6 @@ li {
   padding: 0.8rem;
   border-radius: 6px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.3);
-  position: relative;
 }
 code {
   background: #000;
@@ -43,20 +42,6 @@ code {
   padding: 0.2rem 0.4rem;
   border-radius: 4px;
   font-family: monospace;
-}
-.copy-btn {
-  background: #3b82f6;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  padding: 0.2rem 0.5rem;
-  font-size: 0.8rem;
-  margin-left: 0.4rem;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-.copy-btn:hover {
-  background: #2563eb;
 }
 footer {
   background: #7289da;
@@ -85,10 +70,6 @@ footer a:hover {
   li {
     padding: 0.7rem;
   }
-  .copy-btn {
-    font-size: 0.75rem;
-    padding: 0.2rem 0.4rem;
-  }
   footer {
     position: static;
     font-size: 0.9rem;
@@ -106,62 +87,62 @@ footer a:hover {
 <section>
 <h2>💰 Casino Games</h2>
 <ul>
-<li><code>!bal</code><button class="copy-btn" onclick="copyText('!bal', this)">Copy</button> — Check your balance or another user's balance</li>
-<li><code>!drop</code><button class="copy-btn" onclick="copyText('!drop', this)">Copy</button> — Random drops for members with the '@Casino' role — Max 3 per hour</li>
-<li><code>!scoreboard</code><button class="copy-btn" onclick="copyText('!scoreboard', this)">Copy</button> — See who the big winner is</li>
-<li><code>!blackjack 100</code><button class="copy-btn" onclick="copyText('!blackjack 100', this)">Copy</button> — Play blackjack with betting. React 👊 to Hit, ✋ to Stand, 💰 to Double Down, ✌ to Split</li>
-<li><code>!roulette 50 red</code><button class="copy-btn" onclick="copyText('!roulette 50 red', this)">Copy</button> — Play roulette (red/black/green)</li>
-<li><code>!coinflip 100</code><button class="copy-btn" onclick="copyText('!coinflip 100', this)">Copy</button> — Flip a coin with betting (choose via reactions)</li>
-<li><code>!addmoney @user 1000</code><button class="copy-btn" onclick="copyText('!addmoney @user 1000', this)">Copy</button> — Add coins to a user (admin only)</li>
+<li><code>!bal</code> — Check your balance or another user's balance</li>
+<li><code>!drop</code> — Random drops for members with the '@Casino' role — Max 3 per hour</li>
+<li><code>!scoreboard</code> — See who the big winner is</li>
+<li><code>!blackjack</code> — Play blackjack with betting. Usage: <code>!blackjack 100</code> and react 👊 to Hit, ✋ to Stand, 💰 to Double Down, ✌ to Split</li>
+<li><code>!roulette</code> — Play roulette with betting. Usage: <code>!roulette 50 red</code> or <code>!roulette 100 black</code> or <code>!roulette 20 green</code></li>
+<li><code>!coinflip</code> — Flip a coin with betting. Usage: <code>!coinflip 100</code> (choose via reactions red or blue)</li>
+<li><code>!addmoney</code> — Add coins to a user. Usage: <code>!addmoney @user 1000</code> (admin only)</li>
 </ul>
 </section>
 
 <section>
 <h2>🎮 Games & Quiz (no betting)</h2>
 <ul>
-<li><code>!roll 6</code><button class="copy-btn" onclick="copyText('!roll 6', this)">Copy</button> — Roll a dice (1–6)</li>
-<li><code>!fakenews</code><button class="copy-btn" onclick="copyText('!fakenews', this)">Copy</button> — True/False quiz (✅ or ❌)</li>
-<li><code>!flagquiz</code><button class="copy-btn" onclick="copyText('!flagquiz', this)">Copy</button> — Name the flag! 10 rounds</li>
-<li><code>!memory</code><button class="copy-btn" onclick="copyText('!memory', this)">Copy</button> — Emoji memory game (Simon)</li>
+<li><code>!roll</code> — Roll a dice. Usage: <code>!roll 6</code> or your number (it will be between 1 and 6 or your number)</li>
+<li><code>!fakenews</code> — True/False quiz. Answer with ✅ or ❌ (5 questions)</li>
+<li><code>!flagquiz</code> — Name the flag! 10 rounds</li>
+<li><code>!memory</code> — Emoji memory game (Simon)</li>
 </ul>
 </section>
 
 <section>
 <h2>😂 Fun & Social</h2>
 <ul>
-<li><code>!birthday 25-12-2000</code><button class="copy-btn" onclick="copyText('!birthday 25-12-2000', this)">Copy</button> — Register your birthday</li>
-<li><code>!reverse hello world</code><button class="copy-btn" onclick="copyText('!reverse hello world', this)">Copy</button> — Reverse your text</li>
-<li><code>!overdriv this is amazing</code><button class="copy-btn" onclick="copyText('!overdriv this is amazing', this)">Copy</button> — Exaggerate a sentence</li>
-<li><code>!roast</code><button class="copy-btn" onclick="copyText('!roast', this)">Copy</button> — Light roast (for fun)</li>
-<li><code>!systemmsg</code><button class="copy-btn" onclick="copyText('!systemmsg', this)">Copy</button> — Random system message</li>
+<li><code>!birthday</code> — Usage: <code>!birthday 25-12-2000</code> to register your birthday</li>
+<li><code>!reverse</code> — Reverse your text. Usage: <code>!reverse hello world</code></li>
+<li><code>!overdriv</code> — Exaggerate a sentence. Usage: <code>!overdriv this is amazing</code></li>
+<li><code>!roast</code> — Light roast (FOR FUN). Use <code>!roast @user</code> or <code>!roast</code> to roast yourself</li>
+<li><code>!systemmsg</code> — Random system message</li>
 </ul>
 </section>
 
 <section>
 <h2>🔍 Search & Information</h2>
 <ul>
-<li><code>!gameinfo Minecraft</code><button class="copy-btn" onclick="copyText('!gameinfo Minecraft', this)">Copy</button> — Get Steam game information</li>
-<li><code>!invite statsbot</code><button class="copy-btn" onclick="copyText('!invite statsbot', this)">Copy</button> — Get the Live Stats on your server</li>
+<li><code>!gameinfo</code> — Get Steam game information. Usage: <code>!gameinfo Minecraft</code></li>
+<li><code>!invite statsbot</code> — Get the Live Stats on your server</li>
 </ul>
 </section>
 
 <section>
 <h2>📜 Info</h2>
 <ul>
-<li><code>!remind 5m Take a break</code><button class="copy-btn" onclick="copyText('!remind 5m Take a break', this)">Copy</button> — Set a reminder</li>
-<li><code>!joinleaveinfo</code><button class="copy-btn" onclick="copyText('!joinleaveinfo', this)">Copy</button> — Show join/leave stats</li>
-<li><code>!roleinfo Member</code><button class="copy-btn" onclick="copyText('!roleinfo Member', this)">Copy</button> — Show info about a role</li>
-<li><code>!serverinfo</code><button class="copy-btn" onclick="copyText('!serverinfo', this)">Copy</button> — Show server info</li>
-<li><code>!userinfo @user</code><button class="copy-btn" onclick="copyText('!userinfo @user', this)">Copy</button> — Show info about a user</li>
+<li><code>!remind</code> — Set a reminder. Usage: <code>!remind 5m Take a break</code> or <code>!remind 1h Meeting</code></li>
+<li><code>!joinleaveinfo</code> — Show join/leave statistics for the server</li>
+<li><code>!roleinfo</code> — Show info about a role. Usage: <code>!roleinfo Member</code></li>
+<li><code>!serverinfo</code> — Show info about the server</li>
+<li><code>!userinfo</code> — Show info about a user. Usage: <code>!userinfo @user</code></li>
 </ul>
 </section>
 
 <section>
 <h2>⏰ Misc</h2>
 <ul>
-<li><code>!report @user spam in chat</code><button class="copy-btn" onclick="copyText('!report @user spam in chat', this)">Copy</button> — Report a user</li>
-<li><code>!helpme</code><button class="copy-btn" onclick="copyText('!helpme', this)">Copy</button> — Show all commands</li>
-<li><code>!helpadmin</code><button class="copy-btn" onclick="copyText('!helpadmin', this)">Copy</button> — Show admin-only commands</li>
+<li><code>!report</code> — Report a user to the staff channel. Usage: <code>!report @user spam in chat</code></li>
+<li><code>!helpme</code> — Show this help menu with all commands</li>
+<li><code>!helpadmin</code> — Show admin-only commands</li>
 </ul>
 </section>
 
@@ -174,19 +155,5 @@ footer a:hover {
 <footer>
 <a href='https://discord.gg/9NdbUZc8j5' target='_blank'>Join the Discord</a>
 </footer>
-
-<script>
-function copyText(text, btn) {
-  navigator.clipboard.writeText(text).then(() => {
-    const original = btn.textContent;
-    btn.textContent = "Copied ✅";
-    btn.style.background = "#10b981";
-    setTimeout(() => {
-      btn.textContent = original;
-      btn.style.background = "#3b82f6";
-    }, 1200);
-  });
-}
-</script>
 </body>
 </html>
