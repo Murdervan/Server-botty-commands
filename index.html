@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
 <head>
-<meta charset='UTF-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1.0'>
-<title>Server Botty Commands</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Server Botty — Command Overview</title>
 <style>
 body {
   background-color: #121212;
@@ -80,27 +80,37 @@ footer a:hover {
 </style>
 </head>
 <body>
+
 <h1>🤖 Server Botty — Command Overview</h1>
-<p style='text-align:center; font-style: italic;'>Commands website: <a href='https://is.gd/Serverbotty_commands' target='_blank'>https://is.gd/Serverbotty_commands</a></p>
-<p style='text-align:center; font-style: italic;'>For help join: <a href='https://discord.gg/9NdbUZc8j5' target='_blank'>https://discord.gg/9NdbUZc8j5</a></p>
-<p style='text-align:center; font-style: italic;'>Get server botty to your discord here!: <a href='https://is.gd/serverbotty' target='_blank'>https://is.gd/serverbotty</a></p>
+<p style="text-align:center; font-style: italic;">
+  Commands website: <a href="https://is.gd/Serverbotty_commands" target="_blank">https://is.gd/Serverbotty_commands</a>
+</p>
+<p style="text-align:center; font-style: italic;">
+  Download Server Botty: <a href="https://is.gd/Serverbotty" target="_blank">https://is.gd/Serverbotty</a>
+</p>
+<p style="text-align:center; font-style: italic;">
+  For help join: <a href="https://discord.gg/9NdbUZc8j5" target="_blank">https://discord.gg/9NdbUZc8j5</a>
+</p>
+
 <section>
 <h2>💰 Casino Games</h2>
 <ul>
-<li><code>!bal</code> — Check your balance or another user's balance</li>
-<li><code>!drop</code> — Random drops for members with the '@Casino' role — Max 3 per hour</li>
-<li><code>!scoreboard</code> — See who the big winner is</li>
-<li><code>!blackjack</code> — Play blackjack with betting. Usage: <code>!blackjack 100</code> and react 👊 to Hit, ✋ to Stand, 💰 to Double Down, ✌ to Split</li>
-<li><code>!roulette</code> — Play roulette with betting. Usage: <code>!roulette 50 red</code> or <code>!roulette 100 black</code> or <code>!roulette 20 green</code></li>
-<li><code>!coinflip</code> — Flip a coin with betting. Usage: <code>!coinflip 100</code> (choose via reactions red or blue)</li>
-<li><code>!addmoney</code> — Add coins to a user. Usage: <code>!addmoney @user 1000</code> (admin only)</li>
+<li><code>!bal</code> — Check your balance or another user's balance. Usage: <code>!bal @user</code></li>
+<li><code>!rob @user</code> — Try to rob another user's coins once per day. Success chance ~50%. Fail and you lose coins instead.</li>
+<li><code>!drop</code> — Random drops for members with the Casino role - Max 3 per time</li>
+<li><code>!guessdrop 1-25</code> — Guess a number. Bot picks random number. Correct guess gives 2500-10000 coins - Max 3 per day</li>
+<li><code>!scoreboard</code> — Who is the big Winner?</li>
+<li><code>!blackjack 100</code> — Play blackjack with betting. React 👊 Hit, ✋ Stand, 💰 Double Down, ✌ Split.</li>
+<li><code>!roulette 50 red</code> — Play roulette with betting. Choose red, black, green, or a number</li>
+<li><code>!coinflip 100</code> — Flip a coin with betting. Choose via reactions red or blue</li>
 </ul>
 </section>
 
 <section>
 <h2>🎮 Games & Quiz (no betting)</h2>
 <ul>
-<li><code>!roll</code> — Roll a dice. Usage: <code>!roll 6</code> or your number (it will be between 1 and 6 or your number)</li>
+<li><code>!roll 6</code> — Roll a dice. Choose number of sides, result will be between 1 and your number</li>
+<li><code>!rps</code> — Rock Paper Scissors. React with 🪨 Rock, 📄 Paper, or ✂️ Scissors to play!</li>
 <li><code>!fakenews</code> — True/False quiz. Answer with ✅ or ❌ (5 questions)</li>
 <li><code>!flagquiz</code> — Name the flag! 10 rounds</li>
 <li><code>!memory</code> — Emoji memory game (Simon)</li>
@@ -110,18 +120,21 @@ footer a:hover {
 <section>
 <h2>😂 Fun & Social</h2>
 <ul>
-<li><code>!birthday</code> — Usage: <code>!birthday 25-12-2000</code> to register your birthday</li>
-<li><code>!reverse</code> — Reverse your text. Usage: <code>!reverse hello world</code></li>
-<li><code>!overdriv</code> — Exaggerate a sentence. Usage: <code>!overdriv this is amazing</code></li>
-<li><code>!roast</code> — Light roast (FOR FUN). Use <code>!roast @user</code> or <code>!roast</code> to roast yourself</li>
+<li><code>!birthday 25-12-2000</code> — Register your birthday. Bot will ping you on that date.</li>
+<li><code>!poll question / option1 / option2</code> — Quick poll with reactions. Add as many options as you want.</li>
+<li><code>!roast</code> — Light roast FOR FUN. Use <code>!roast @user</code> or <code>!roast</code> to roast yourself</li>
 <li><code>!systemmsg</code> — Random system message</li>
 </ul>
 </section>
 
 <section>
-<h2>🔍 Search & Information</h2>
+<h2>🔍 Search, Information & Daily</h2>
 <ul>
-<li><code>!gameinfo</code> — Get Steam game information. Usage: <code>!gameinfo Minecraft</code></li>
+<li><code>!remind 5m Take a break</code> — Set a reminder. Supports s, m, h, d time formats</li>
+<li><code>!pingtest</code> — Measure latency to Discord API.</li>
+<li><code>!ipinfo 8.8.8.8</code> — Simple IP lookup. Enter any IP or domain name to see location, ISP, timezone and more.</li>
+<li><code>!steamstatus</code> — Check if Steam is down</li>
+<li><code>!gameinfo Minecraft</code> — Get Steam game information</li>
 <li><code>!invite statsbot</code> — Get the Live Stats on your server</li>
 </ul>
 </section>
@@ -129,18 +142,18 @@ footer a:hover {
 <section>
 <h2>📜 Info</h2>
 <ul>
-<li><code>!remind</code> — Set a reminder. Usage: <code>!remind 5m Take a break</code> or <code>!remind 1h Meeting</code></li>
-<li><code>!joinleaveinfo</code> — Show join/leave statistics for the server</li>
-<li><code>!roleinfo</code> — Show info about a role. Usage: <code>!roleinfo Member</code></li>
+<li><code>!serverstats</code> — Show server statistics</li>
 <li><code>!serverinfo</code> — Show info about the server</li>
-<li><code>!userinfo</code> — Show info about a user. Usage: <code>!userinfo @user</code></li>
+<li><code>!joinleaveinfo</code> — Show join/leave statistics for the server</li>
+<li><code>!userinfo @user</code> — Show info about a user</li>
+<li><code>!roleinfo @role</code> — Show info about a role</li>
 </ul>
 </section>
 
 <section>
 <h2>⏰ Misc</h2>
 <ul>
-<li><code>!report</code> — Report a user to the staff channel. Usage: <code>!report @user spam in chat</code></li>
+<li><code>!report @user spam in chat</code> — Report a user to the staff channel</li>
 <li><code>!helpme</code> — Show this help menu with all commands</li>
 <li><code>!helpadmin</code> — Show admin-only commands</li>
 </ul>
@@ -149,11 +162,15 @@ footer a:hover {
 <section>
 <h2>🤖 Automatic Log Actions (info)</h2>
 <p>Welcome messages • Birthday pings • Keyword triggers • Random emoji reactions • Laughs on 2+ 😂/🤣 • Rare loot drops • 'Shhh mode' anti-spam</p>
-<p style='margin-top: 1rem;'><strong>Birthday pings:</strong> Use <code>!birthday [DD-MM-YYYY]</code> to register your birthday. The bot will ping you on that date (local server time) with a celebration message. Only server staff can view the full birthday list.</p>
+<p style="margin-top: 1rem;">
+<strong>Birthday pings:</strong> Use <code>!birthday [DD-MM-YYYY]</code> to register your birthday. The bot will ping you on that date (local server time) with a celebration message. Only server staff can view the full birthday list.
+</p>
+<p style="margin-top: 1rem; font-style: italic;">💡 Tip: consider muting the log channel if it gets too noisy.</p>
 </section>
 
 <footer>
-<a href='https://discord.gg/9NdbUZc8j5' target='_blank'>Join the Discord</a>
+<a href="https://discord.gg/9NdbUZc8j5" target="_blank">Join the Discord</a>
 </footer>
+
 </body>
 </html>
