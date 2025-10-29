@@ -61,8 +61,6 @@ footer a {
 footer a:hover {
   text-decoration: underline;
 }
-
-/* --- Mobilvenlige forbedringer --- */
 @media (max-width: 768px) {
   body { font-size: 0.95rem; }
   section {
@@ -83,88 +81,79 @@ footer a:hover {
 </head>
 <body>
 <h1>🤖 Server Botty — Command Overview</h1>
-<p style='text-align:center; font-style: italic;'>Get server botty to your discord here: <a href='https://is.gd/serverbotty' target='_blank'>https://is.gd/serverbotty</a></p>
+<p style='text-align:center; font-style: italic;'>Commands website: <a href='https://is.gd/Serverbotty_commands' target='_blank'>https://is.gd/Serverbotty_commands</a></p>
 <p style='text-align:center; font-style: italic;'>For help join: <a href='https://discord.gg/9NdbUZc8j5' target='_blank'>https://discord.gg/9NdbUZc8j5</a></p>
-
-<section>
-<h2>🎲 HOW TO PLAY</h2>
-<ul>
-<li><strong>Blackjack:</strong> <code>!blackjack [bet]</code> React 👊 to Hit, ✋ to Stand, 💰 to Double Down, ✌ to Split.</li>
-<li><strong>Roulette:</strong> <code>!roulette [bet] [red/black/green/number]</code> — bet on a colour or specific number.</li>
-<li><strong>Coinflip:</strong> <code>!coinflip [bet]</code> — choose your side via reactions (heads/tails).</li>
-</ul>
-<p style='font-style: italic;'>Below are available command categories and usage — all commands are English-only.</p>
-</section>
 
 <section>
 <h2>💰 Casino Games</h2>
 <ul>
-<li><code>!addmoney</code> — Add coins to a user (admin only)</li>
 <li><code>!bal</code> — Check your balance or another user's balance</li>
-<li><code>!blackjack</code> — Play blackjack with betting. Usage: !blackjack [bet] (includes Split & Double Down)</li>
-<li><code>!roulette</code> — Play roulette with betting. Usage: !roulette [bet] [red/black/green/number]</li>
-<li><code>!coinflip</code> — Flip a coin with betting. Usage: !coinflip [bet] (choose via reactions)</li>
-<li><code>!roll</code> — Roll a die. Usage: !roll [sides]</li>
-<li><code>!drop</code> — Drop coins for members with the 'Casino' role</li>
-</ul>
-</section>
-
-<section>
-<h2>📜 Info</h2>
-<ul>
-<li><code>!joinleaveinfo</code> — Show join/leave statistics for the server</li>
-<li><code>!roleinfo</code> — Show info about a role. Usage: !roleinfo [role name]</li>
-<li><code>!serverinfo</code> — Show info about the server</li>
-<li><code>!userinfo</code> — Show info about a user. Usage: !userinfo @user</li>
+<li><code>!drop</code> — Random drops for members with the '@Casino' role — Max 3 per hour</li>
+<li><code>!scoreboard</code> — See who the big winner is</li>
+<li><code>!blackjack</code> — Play blackjack with betting. Usage: <code>!blackjack 100</code> and react 👊 to Hit, ✋ to Stand, 💰 to Double Down, ✌ to Split</li>
+<li><code>!roulette</code> — Play roulette with betting. Usage: <code>!roulette 50 red</code> or <code>!roulette 100 black</code> or <code>!roulette 20 green</code></li>
+<li><code>!coinflip</code> — Flip a coin with betting. Usage: <code>!coinflip 100</code> (choose via reactions red or blue)</li>
+<li><code>!addmoney</code> — Add coins to a user. Usage: <code>!addmoney @user 1000</code> (admin only)</li>
 </ul>
 </section>
 
 <section>
 <h2>🎮 Games & Quiz (no betting)</h2>
 <ul>
+<li><code>!roll</code> — Roll a dice. Usage: <code>!roll 6</code> or your number (it will be between 1 and 6 or your number)</li>
 <li><code>!fakenews</code> — True/False quiz. Answer with ✅ or ❌ (5 questions)</li>
 <li><code>!flagquiz</code> — Name the flag! 10 rounds</li>
-<li><code>!memory</code> — Emoji memory game (Simon). Usage: !memory</li>
-<li><code>!reverse</code> — Reverse your text. Usage: !reverse [text]</li>
-</ul>
-</section>
-
-<section>
-<h2>🔍 Search & Information</h2>
-<ul>
-<li><code>!gameinfo</code> — Get Steam game information. Usage: !gameinfo [title]</li>
+<li><code>!memory</code> — Emoji memory game (Simon)</li>
 </ul>
 </section>
 
 <section>
 <h2>😂 Fun & Social</h2>
 <ul>
-<li><code>!overdriv</code> — Exaggerate a sentence. Usage: !overdriv [text]</li>
-<li><code>!roast</code> — Light roast (for fun). Use !roast @user or !roast to roast yourself</li>
+<li><code>!birthday</code> — Usage: <code>!birthday 25-12-2000</code> to register your birthday</li>
+<li><code>!reverse</code> — Reverse your text. Usage: <code>!reverse hello world</code></li>
+<li><code>!overdriv</code> — Exaggerate a sentence. Usage: <code>!overdriv this is amazing</code></li>
+<li><code>!roast</code> — Light roast (FOR FUN). Use <code>!roast @user</code> or <code>!roast</code> to roast yourself</li>
 <li><code>!systemmsg</code> — Random system message</li>
+</ul>
+</section>
+
+<section>
+<h2>🔍 Search & Information</h2>
+<ul>
+<li><code>!gameinfo</code> — Get Steam game information. Usage: <code>!gameinfo Minecraft</code></li>
+<li><code>!invite statsbot</code> — Get the Live Stats on your server</li>
+</ul>
+</section>
+
+<section>
+<h2>📜 Info</h2>
+<ul>
+<li><code>!remind</code> — Set a reminder. Usage: <code>!remind 5m Take a break</code> or <code>!remind 1h Meeting</code></li>
+<li><code>!joinleaveinfo</code> — Show join/leave statistics for the server</li>
+<li><code>!roleinfo</code> — Show info about a role. Usage: <code>!roleinfo Member</code></li>
+<li><code>!serverinfo</code> — Show info about the server</li>
+<li><code>!userinfo</code> — Show info about a user. Usage: <code>!userinfo @user</code></li>
 </ul>
 </section>
 
 <section>
 <h2>⏰ Misc</h2>
 <ul>
+<li><code>!report</code> — Report a user to the staff channel. Usage: <code>!report @user spam in chat</code></li>
+<li><code>!helpme</code> — Show this help menu with all commands</li>
 <li><code>!helpadmin</code> — Show admin-only commands</li>
-<li><code>!helpme</code> — Show this help menu with all commands (English)</li>
-<li><code>!invite_statbot</code> — Get the StatBot invite link</li>
-<li><code>!remind</code> — Set a reminder. Usage: !remind [time] [message] (e.g., !remind 5m Take a break)</li>
-<li><code>!report</code> — Report a user to the staff channel. Usage: !report @user [reason]</li>
 </ul>
 </section>
 
 <section>
 <h2>🤖 Automatic Log Actions (info)</h2>
-<p>Welcome messages • Birthday pings • Keyword triggers • Random emoji reactions • Laughs on 3+ 😂/🤣 • Rare loot drops • 'Shhh mode' anti-spam</p>
-<p style='margin-top: 1rem;'><strong>Birthday pings:</strong> Use <code>!birthday set YYYY-MM-DD</code> to register your birthday. The bot will ping you on that date (local server time) with a celebration message. To list saved birthdays use <code>!birthday list</code>. Server staff can view the birthday list with <code>!birthday list</code> (requires Manage Messages permission).</p>
-<p style='font-style: italic; margin-top: 1rem;'>Tip: consider muting the log channel if it gets too noisy.</p>
+<p>Welcome messages • Birthday pings • Keyword triggers • Random emoji reactions • Laughs on 2+ 😂/🤣 • Rare loot drops • 'Shhh mode' anti-spam</p>
+<p style='margin-top: 1rem;'><strong>Birthday pings:</strong> Use <code>!birthday [DD-MM-YYYY]</code> to register your birthday. The bot will ping you on that date (local server time) with a celebration message. Only server staff can view the full birthday list.</p>
 </section>
 
 <footer>
-<a href='https://discord.gg/9NdbUZc8j5' target='_blank'>Join my Discord</a>
+<a href='https://discord.gg/9NdbUZc8j5' target='_blank'>Join the Discord</a>
 </footer>
 </body>
 </html>
