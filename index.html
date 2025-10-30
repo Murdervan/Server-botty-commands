@@ -5,222 +5,308 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Server Botty — Command Overview</title>
 <style>
+  :root {
+    --bg-dark: #0f0f10;
+    --bg-section: #1a1a1c;
+    --text-main: #f5f5f5;
+    --accent-green: #00ff7f;
+    --accent-blue: #3b82f6;
+  }
+
   body {
     font-family: "Segoe UI", sans-serif;
-    background: #0e0e10;
-    color: #f5f5f5;
-    line-height: 1.6;
+    background: var(--bg-dark);
+    color: var(--text-main);
     margin: 0;
-    padding: 0;
+    display: flex;
+    min-height: 100vh;
   }
-  header {
-    background: #18181b;
+
+  /* Sidebar */
+  nav {
+    width: 250px;
+    background: #141416;
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    overflow-y: auto;
+    border-right: 1px solid rgba(255,255,255,0.1);
+  }
+
+  nav h2 {
     text-align: center;
-    padding: 1.8rem 1rem;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    color: var(--accent-blue);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
   }
+
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  nav li {
+    margin-bottom: 0.8rem;
+  }
+
+  nav a {
+    color: var(--text-main);
+    text-decoration: none;
+    display: block;
+    padding: 0.6rem 0.8rem;
+    border-radius: 6px;
+    transition: 0.2s;
+  }
+
+  nav a:hover {
+    background: var(--accent-blue);
+    color: white;
+  }
+
+  /* Main content */
+  main {
+    margin-left: 270px;
+    padding: 2rem;
+    flex: 1;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
   header h1 {
     margin: 0;
     font-size: 2rem;
+    color: var(--accent-blue);
   }
+
+  header p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+
   section {
-    margin: 2rem auto;
-    padding: 1.5rem 2rem;
-    max-width: 900px;
-    background: rgba(255, 255, 255, 0.02);
-    border-radius: 12px;
-    border: 1px solid rgba(255,255,255,0.05);
+    background: var(--bg-section);
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
   }
+
   h2 {
-    color: #ffcc70;
     border-bottom: 1px solid rgba(255,255,255,0.1);
     padding-bottom: 0.3rem;
+    color: var(--accent-blue);
   }
-  h3 {
-    color: #ffd479;
-    margin-top: 1rem;
-  }
+
   ul {
     list-style: none;
     padding-left: 0;
-    margin: 0.5rem 0 1rem 0;
+    margin: 0.6rem 0;
   }
+
   li {
     background: rgba(255,255,255,0.03);
-    margin-bottom: 0.3rem;
-    padding: 0.6rem 0.8rem;
-    border-radius: 8px;
-    border-left: 3px solid #ffcc70;
+    margin-bottom: 0.4rem;
+    padding: 0.5rem 0.8rem;
+    border-radius: 6px;
   }
-  a {
-    color: #7dcfff;
-    text-decoration: none;
-  }
-  a:hover { text-decoration: underline; }
 
-  /* ADMIN BOX */
+  li code {
+    color: var(--accent-green);
+    background: #000;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-family: monospace;
+  }
+
+  /* Admin Box */
   .admin-box {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--bg-section);
     padding: 1rem 1.2rem;
-    border-radius: 12px;
-    margin-top: 0.5rem;
+    border-radius: 10px;
   }
+
   .admin-box h3 {
+    color: var(--accent-blue);
     margin-top: 1rem;
-    color: #ffcc70;
-  }
-  .admin-box ul {
-    list-style: none;
-    margin: 0.3rem 0 1rem 0;
-    padding-left: 0;
-  }
-  .admin-box li {
-    padding: 0.4rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   }
 
   footer {
     text-align: center;
     font-size: 0.9rem;
-    color: #aaa;
-    margin: 2rem 0 1rem 0;
+    margin: 2rem 0 1rem;
+    color: #999;
   }
 
-  @media (max-width: 768px) {
-    body { font-size: 0.95rem; }
-    section { margin: 1rem; padding: 1rem; }
-    li { padding: 0.5rem; }
-    h1 { font-size: 1.6rem; }
+  /* Mobile */
+  @media (max-width: 850px) {
+    nav {
+      position: static;
+      width: 100%;
+      border-right: none;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    nav a {
+      margin: 0.2rem;
+      padding: 0.4rem 0.6rem;
+      font-size: 0.9rem;
+    }
+    main {
+      margin-left: 0;
+      padding: 1rem;
+    }
   }
 </style>
 </head>
 <body>
 
-<header>
-  <h1>Server Botty — Command Overview</h1>
-  <p>
-    Commands website: <a href="https://is.gd/Serverbotty_commands">https://is.gd/Serverbotty_commands</a><br>
-    Download Server Botty: <a href="https://is.gd/Serverbotty">https://is.gd/Serverbotty</a><br>
-    For help join: <a href="https://discord.gg/9NdbUZc8j5">https://discord.gg/9NdbUZc8j5</a>
-  </p>
-</header>
-
-<section>
-  <h2>💰 Casino Games</h2>
+<nav>
+  <h2>Server Botty</h2>
   <ul>
-    <li>!bal — Check your balance or another user's balance. Usage: !bal @user</li>
-    <li>!rob @user — Try to rob another user's coins once per day. Success chance ~50%. Fail and you lose coins instead.</li>
-    <li>!drop — Random drops for members with the Casino role - Max 3 per time</li>
-    <li>!guessdrop 1-25 — Guess a number. Correct guess gives 2500-10000 coins - Max 3 per day</li>
-    <li>!scoreboard — Who is the big Winner?</li>
-    <li>!blackjack 100 — Play blackjack with betting. React 👊 Hit, ✋ Stand, 💰 Double Down, ✌ Split.</li>
-    <li>!roulette 50 red — Play roulette with betting. Choose red, black, green, or a number</li>
-    <li>!coinflip 100 — Flip a coin with betting. Choose via reactions red or blue</li>
+    <li><a href="#casino">💰 Casino</a></li>
+    <li><a href="#games">🎮 Games</a></li>
+    <li><a href="#fun">😂 Fun</a></li>
+    <li><a href="#search">🔍 Info</a></li>
+    <li><a href="#misc">⏰ Misc</a></li>
+    <li><a href="#auto">🤖 Auto Logs</a></li>
+    <li><a href="#admin">🛡️ Admin</a></li>
   </ul>
+</nav>
 
-  <h2>🎮 Games & Quiz (no betting)</h2>
-  <ul>
-    <li>!roll 6 — Roll a dice (result 1–6)</li>
-    <li>!rps — Rock Paper Scissors. React with 🪨 📄 ✂️</li>
-    <li>!fakenews — True/False quiz. Answer with ✅ or ❌ (5 questions)</li>
-    <li>!flagquiz — Name the flag! 10 rounds</li>
-    <li>!memory — Emoji memory game (Simon)</li>
-  </ul>
+<main>
+  <header>
+    <h1>Server Botty — Command Overview</h1>
+    <p>
+      Commands website: <a href="https://is.gd/Serverbotty_commands">https://is.gd/Serverbotty_commands</a><br>
+      Download Bot: <a href="https://is.gd/Serverbotty">https://is.gd/Serverbotty</a><br>
+      Discord: <a href="https://discord.gg/9NdbUZc8j5">https://discord.gg/9NdbUZc8j5</a>
+    </p>
+  </header>
 
-  <h2>😂 Fun & Social</h2>
-  <ul>
-    <li>!birthday 25-12-2000 — Register your birthday. Bot will ping you on that date.</li>
-    <li>!poll question / option1 / option2 — Quick poll with reactions.</li>
-    <li>!roast — Light roast FOR FUN. Use !roast @user or !roast to roast yourself</li>
-    <li>!systemmsg — Random system message</li>
-  </ul>
-
-  <h2>🔍 Search, Information & Daily</h2>
-  <ul>
-    <li>!remind 5m Take a break — Set a reminder. Supports s, m, h, d</li>
-    <li>!pingtest — Measure latency to Discord API.</li>
-    <li>!ipinfo 8.8.8.8 — Simple IP lookup. Shows location, ISP, timezone etc.</li>
-    <li>!steamstatus — Check if Steam is down</li>
-    <li>!gameinfo Minecraft — Get Steam game info</li>
-    <li>!invite statsbot — Get the Live Stats on your server</li>
-  </ul>
-
-  <h2>📜 Info</h2>
-  <ul>
-    <li>!serverstats — Show server statistics</li>
-    <li>!serverinfo — Show info about the server</li>
-    <li>!joinleaveinfo — Show join/leave statistics for the server</li>
-    <li>!userinfo @user — Show info about a user</li>
-    <li>!roleinfo @role — Show info about a role</li>
-  </ul>
-
-  <h2>⏰ Misc</h2>
-  <ul>
-    <li>!report @user spam in chat — Report a user to the staff channel</li>
-    <li>!helpme — Show this help menu with all commands</li>
-    <li>!helpadmin — Show admin-only commands</li>
-  </ul>
-
-  <h2>🤖 Automatic Log Actions (info)</h2>
-  <ul>
-    <li>Welcome messages • Birthday pings • Keyword triggers • Random emoji reactions • Laughs on 2+ 😂/🤣 • Rare loot drops • 'Shhh mode' anti-spam</li>
-    <li>Birthday pings: Use !birthday [DD-MM-YYYY] to register your birthday. Bot pings you on that date.</li>
-    <li>Only server staff can view the full birthday list.</li>
-    <li><strong>Tip:</strong> Consider muting the log channel if it gets too noisy.</li>
-  </ul>
-</section>
-
-<!-- ADMIN SECTION -->
-<section>
-  <h2>🛡️ Admin Commands</h2>
-  <div class="admin-box">
-    <h3>💰 Economy</h3>
+  <section id="casino">
+    <h2>💰 Casino Games</h2>
     <ul>
-      <li>!addmoney @user 1000 — Add coins to a user</li>
-      <li>!delmoney @user 500 — Remove coins from a user</li>
-      <li>!resetbal @user — Reset balance to 0 for a user or all Casino role members</li>
+      <li><code>!bal</code> — Check your balance or another user's balance. Usage: !bal @user</li>
+      <li><code>!rob @user</code> — Try to rob another user's coins once per day. ~50% success</li>
+      <li><code>!drop</code> — Random drops for Casino role (max 3 per time)</li>
+      <li><code>!guessdrop 1-25</code> — Guess the number. Win 2500–10000 coins</li>
+      <li><code>!scoreboard</code> — See who’s winning</li>
+      <li><code>!blackjack 100</code> — Play blackjack</li>
+      <li><code>!roulette 50 red</code> — Bet on red, black, green or number</li>
+      <li><code>!coinflip 100</code> — Flip a coin. Choose red or blue</li>
     </ul>
+  </section>
 
-    <h3>🎂 Birthday Management</h3>
+  <section id="games">
+    <h2>🎮 Games & Quiz</h2>
     <ul>
-      <li>!birthday @user 25-12-2000 — Set a birthday for another user</li>
-      <li>!birthday list — List all saved birthdays</li>
-      <li>!birthday del @user — Delete a user's birthday</li>
+      <li><code>!roll 6</code> — Roll a dice</li>
+      <li><code>!rps</code> — Rock Paper Scissors</li>
+      <li><code>!fakenews</code> — True/False quiz</li>
+      <li><code>!flagquiz</code> — Name the flag</li>
+      <li><code>!memory</code> — Emoji memory game</li>
     </ul>
+  </section>
 
-    <h3>🔒 Channel Management</h3>
+  <section id="fun">
+    <h2>😂 Fun & Social</h2>
     <ul>
-      <li>!lock #channel — Lock a channel so members cannot send messages</li>
-      <li>!unlock #channel — Unlock a channel</li>
-      <li>!say #channel your message — Bot sends message in chosen channel for announcements</li>
-      <li>!channel list — Show names of all text channels (easy to copy for !say or !lock)</li>
+      <li><code>!birthday 25-12-2000</code> — Register your birthday</li>
+      <li><code>!poll question / option1 / option2</code> — Quick poll</li>
+      <li><code>!roast</code> — Light roast (fun only)</li>
+      <li><code>!systemmsg</code> — Random system message</li>
     </ul>
+  </section>
 
-    <h3>⚠️ Moderation</h3>
+  <section id="search">
+    <h2>🔍 Search & Info</h2>
     <ul>
-      <li>!warning @user reason — Warn a user</li>
-      <li>!mute @user 10m — Mute a user (supports s, m, h, d)</li>
-      <li>!unmute @user — Unmute a user</li>
-      <li>!kick @user reason — Kick a user</li>
-      <li>!ban @user reason — Ban a user</li>
-      <li>!clean 50 — Clean messages (or use ALL to delete all)</li>
+      <li><code>!remind 5m Take a break</code> — Set a reminder</li>
+      <li><code>!pingtest</code> — Check latency</li>
+      <li><code>!ipinfo 8.8.8.8</code> — IP lookup</li>
+      <li><code>!steamstatus</code> — Check Steam status</li>
+      <li><code>!gameinfo Minecraft</code> — Steam game info</li>
+      <li><code>!invite statsbot</code> — Live server stats</li>
     </ul>
+  </section>
 
-    <h3>👥 Server Management</h3>
+  <section id="misc">
+    <h2>📜 Misc & Info</h2>
     <ul>
-      <li>!autorole add RoleName — Add an autorole given to new members</li>
-      <li>!autorole remove RoleName — Remove an autorole</li>
-      <li>!member list — Show server member list</li>
-      <li>!joinleaveinfo — Show join/leave statistics for the server</li>
+      <li><code>!serverinfo</code> — Show server info</li>
+      <li><code>!joinleaveinfo</code> — Join/leave stats</li>
+      <li><code>!userinfo @user</code> — User info</li>
+      <li><code>!roleinfo @role</code> — Role info</li>
+      <li><code>!report @user reason</code> — Report a user</li>
+      <li><code>!helpme</code> — Help menu</li>
+      <li><code>!helpadmin</code> — Admin-only help</li>
     </ul>
-  </div>
-</section>
+  </section>
 
-<footer>
-  <p>Server Botty © 2025 — All rights reserved</p>
-</footer>
+  <section id="auto">
+    <h2>🤖 Automatic Log Actions</h2>
+    <p>
+      Welcome messages • Birthday pings • Keyword triggers • Random emoji reactions • Laughs on 😂/🤣 • Rare loot drops • 'Shhh mode' anti-spam<br><br>
+      <strong>Birthday pings:</strong> Use <code>!birthday [DD-MM-YYYY]</code> to register your birthday.
+    </p>
+  </section>
+
+  <section id="admin">
+    <h2>🛡️ Admin Commands</h2>
+    <div class="admin-box">
+      <h3>💰 Economy</h3>
+      <ul>
+        <li><code>!addmoney @user 1000</code> — Add coins</li>
+        <li><code>!delmoney @user 500</code> — Remove coins</li>
+        <li><code>!resetbal @user</code> — Reset user balance</li>
+      </ul>
+
+      <h3>🎂 Birthday Management</h3>
+      <ul>
+        <li><code>!birthday @user 25-12-2000</code> — Set another user’s birthday</li>
+        <li><code>!birthday list</code> — List all birthdays</li>
+        <li><code>!birthday del @user</code> — Delete a birthday</li>
+      </ul>
+
+      <h3>🔒 Channel Management</h3>
+      <ul>
+        <li><code>!lock #channel</code> — Lock channel</li>
+        <li><code>!unlock #channel</code> — Unlock channel</li>
+        <li><code>!say #channel message</code> — Bot sends message</li>
+        <li><code>!channel list</code> — Show all channels</li>
+      </ul>
+
+      <h3>⚠️ Moderation</h3>
+      <ul>
+        <li><code>!warning @user reason</code> — Warn user</li>
+        <li><code>!mute @user 10m</code> — Mute user</li>
+        <li><code>!unmute @user</code> — Unmute user</li>
+        <li><code>!kick @user reason</code> — Kick user</li>
+        <li><code>!ban @user reason</code> — Ban user</li>
+        <li><code>!clean 50</code> — Clean messages</li>
+      </ul>
+
+      <h3>👥 Server Management</h3>
+      <ul>
+        <li><code>!autorole add RoleName</code> — Add autorole</li>
+        <li><code>!autorole remove RoleName</code> — Remove autorole</li>
+        <li><code>!member list</code> — List members</li>
+        <li><code>!joinleaveinfo</code> — Join/leave stats</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <p>Server Botty © 2025 — All rights reserved</p>
+  </footer>
+</main>
 
 </body>
 </html>
-
