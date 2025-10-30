@@ -5,161 +5,174 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Server Botty — Command Overview</title>
 <style>
-body {
-  background-color: #121212;
-  color: #f5f5f5;
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-}
-h1, h2 {
-  color: #3b82f6;
-  text-align: center;
-}
-section {
-  max-width: 900px;
-  margin: 2rem auto;
-  padding: 1rem;
-  background: #1e1e1e;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-}
-ul {
-  list-style: none;
-  padding: 0;
-}
-li {
-  background: #2a2a2a;
-  margin: 0.5rem 0;
-  padding: 0.8rem;
-  border-radius: 6px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
-}
-code {
-  background: #000;
-  color: #00ffcc;
-  padding: 0.2rem 0.4rem;
-  border-radius: 4px;
-  font-family: monospace;
-}
-footer {
-  background: #7289da;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  width: 100%;
-  box-shadow: 0 -2px 8px rgba(0,0,0,0.5);
-  position: relative;
-  bottom: 0;
-}
-footer a {
-  color: #ffe;
-  text-decoration: none;
-  font-weight: bold;
-}
-footer a:hover {
-  text-decoration: underline;
-}
-@media (max-width: 768px) {
-  body { font-size: 0.95rem; }
+  body {
+    font-family: "Segoe UI", sans-serif;
+    background: #0e0e10;
+    color: #f5f5f5;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+  }
+  header {
+    background: #18181b;
+    text-align: center;
+    padding: 1.8rem 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  header h1 {
+    margin: 0;
+    font-size: 2rem;
+  }
   section {
-    margin: 1rem;
-    padding: 1rem;
+    margin: 2rem auto;
+    padding: 1.5rem 2rem;
+    max-width: 900px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.05);
   }
-  li {
-    padding: 0.7rem;
+  h2 {
+    color: #ffcc70;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 0.3rem;
   }
-  footer {
-    position: static;
-    font-size: 0.9rem;
+  h3 {
+    color: #ffd479;
     margin-top: 1rem;
   }
-  h1 { font-size: 1.6rem; }
-}
+  ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0.5rem 0 1rem 0;
+  }
+  li {
+    background: rgba(255,255,255,0.03);
+    margin-bottom: 0.3rem;
+    padding: 0.6rem 0.8rem;
+    border-radius: 8px;
+    border-left: 3px solid #ffcc70;
+  }
+  a {
+    color: #7dcfff;
+    text-decoration: none;
+  }
+  a:hover { text-decoration: underline; }
+
+  /* ADMIN BOX */
+  .admin-box {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1rem 1.2rem;
+    border-radius: 12px;
+    margin-top: 0.5rem;
+  }
+  .admin-box h3 {
+    margin-top: 1rem;
+    color: #ffcc70;
+  }
+  .admin-box ul {
+    list-style: none;
+    margin: 0.3rem 0 1rem 0;
+    padding-left: 0;
+  }
+  .admin-box li {
+    padding: 0.4rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  footer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #aaa;
+    margin: 2rem 0 1rem 0;
+  }
+
+  @media (max-width: 768px) {
+    body { font-size: 0.95rem; }
+    section { margin: 1rem; padding: 1rem; }
+    li { padding: 0.5rem; }
+    h1 { font-size: 1.6rem; }
+  }
 </style>
 </head>
 <body>
 
-<h1>🤖 Server Botty — Command Overview</h1>
-<p style="text-align:center; font-style: italic;">
-  Commands website: <a href="https://is.gd/Serverbotty_commands" target="_blank">https://is.gd/Serverbotty_commands</a>
-</p>
-<p style="text-align:center; font-style: italic;">
-  Download Server Botty: <a href="https://is.gd/Serverbotty" target="_blank">https://is.gd/Serverbotty</a>
-</p>
-<p style="text-align:center; font-style: italic;">
-  For help join: <a href="https://discord.gg/9NdbUZc8j5" target="_blank">https://discord.gg/9NdbUZc8j5</a>
-</p>
+<header>
+  <h1>Server Botty — Command Overview</h1>
+  <p>
+    Commands website: <a href="https://is.gd/Serverbotty_commands">https://is.gd/Serverbotty_commands</a><br>
+    Download Server Botty: <a href="https://is.gd/Serverbotty">https://is.gd/Serverbotty</a><br>
+    For help join: <a href="https://discord.gg/9NdbUZc8j5">https://discord.gg/9NdbUZc8j5</a>
+  </p>
+</header>
 
 <section>
-<h2>💰 Casino Games</h2>
-<ul>
-<li><code>!bal</code> — Check your balance or another user's balance. Usage: <code>!bal @user</code></li>
-<li><code>!rob @user</code> — Try to rob another user's coins once per day. Success chance ~50%. Fail and you lose coins instead.</li>
-<li><code>!drop</code> — Random drops for members with the Casino role - Max 3 per time</li>
-<li><code>!guessdrop 1-25</code> — Guess a number. Bot picks random number. Correct guess gives 2500-10000 coins - Max 3 per day</li>
-<li><code>!scoreboard</code> — Who is the big Winner?</li>
-<li><code>!blackjack 100</code> — Play blackjack with betting. React 👊 Hit, ✋ Stand, 💰 Double Down, ✌ Split.</li>
-<li><code>!roulette 50 red</code> — Play roulette with betting. Choose red, black, green, or a number</li>
-<li><code>!coinflip 100</code> — Flip a coin with betting. Choose via reactions red or blue</li>
-</ul>
+  <h2>💰 Casino Games</h2>
+  <ul>
+    <li>!bal — Check your balance or another user's balance. Usage: !bal @user</li>
+    <li>!rob @user — Try to rob another user's coins once per day. Success chance ~50%. Fail and you lose coins instead.</li>
+    <li>!drop — Random drops for members with the Casino role - Max 3 per time</li>
+    <li>!guessdrop 1-25 — Guess a number. Correct guess gives 2500-10000 coins - Max 3 per day</li>
+    <li>!scoreboard — Who is the big Winner?</li>
+    <li>!blackjack 100 — Play blackjack with betting. React 👊 Hit, ✋ Stand, 💰 Double Down, ✌ Split.</li>
+    <li>!roulette 50 red — Play roulette with betting. Choose red, black, green, or a number</li>
+    <li>!coinflip 100 — Flip a coin with betting. Choose via reactions red or blue</li>
+  </ul>
+
+  <h2>🎮 Games & Quiz (no betting)</h2>
+  <ul>
+    <li>!roll 6 — Roll a dice (result 1–6)</li>
+    <li>!rps — Rock Paper Scissors. React with 🪨 📄 ✂️</li>
+    <li>!fakenews — True/False quiz. Answer with ✅ or ❌ (5 questions)</li>
+    <li>!flagquiz — Name the flag! 10 rounds</li>
+    <li>!memory — Emoji memory game (Simon)</li>
+  </ul>
+
+  <h2>😂 Fun & Social</h2>
+  <ul>
+    <li>!birthday 25-12-2000 — Register your birthday. Bot will ping you on that date.</li>
+    <li>!poll question / option1 / option2 — Quick poll with reactions.</li>
+    <li>!roast — Light roast FOR FUN. Use !roast @user or !roast to roast yourself</li>
+    <li>!systemmsg — Random system message</li>
+  </ul>
+
+  <h2>🔍 Search, Information & Daily</h2>
+  <ul>
+    <li>!remind 5m Take a break — Set a reminder. Supports s, m, h, d</li>
+    <li>!pingtest — Measure latency to Discord API.</li>
+    <li>!ipinfo 8.8.8.8 — Simple IP lookup. Shows location, ISP, timezone etc.</li>
+    <li>!steamstatus — Check if Steam is down</li>
+    <li>!gameinfo Minecraft — Get Steam game info</li>
+    <li>!invite statsbot — Get the Live Stats on your server</li>
+  </ul>
+
+  <h2>📜 Info</h2>
+  <ul>
+    <li>!serverstats — Show server statistics</li>
+    <li>!serverinfo — Show info about the server</li>
+    <li>!joinleaveinfo — Show join/leave statistics for the server</li>
+    <li>!userinfo @user — Show info about a user</li>
+    <li>!roleinfo @role — Show info about a role</li>
+  </ul>
+
+  <h2>⏰ Misc</h2>
+  <ul>
+    <li>!report @user spam in chat — Report a user to the staff channel</li>
+    <li>!helpme — Show this help menu with all commands</li>
+    <li>!helpadmin — Show admin-only commands</li>
+  </ul>
+
+  <h2>🤖 Automatic Log Actions (info)</h2>
+  <ul>
+    <li>Welcome messages • Birthday pings • Keyword triggers • Random emoji reactions • Laughs on 2+ 😂/🤣 • Rare loot drops • 'Shhh mode' anti-spam</li>
+    <li>Birthday pings: Use !birthday [DD-MM-YYYY] to register your birthday. Bot pings you on that date.</li>
+    <li>Only server staff can view the full birthday list.</li>
+    <li><strong>Tip:</strong> Consider muting the log channel if it gets too noisy.</li>
+  </ul>
 </section>
 
+<!-- ADMIN SECTION -->
 <section>
-<h2>🎮 Games & Quiz (no betting)</h2>
-<ul>
-<li><code>!roll 6</code> — Roll a dice. Choose number of sides, result will be between 1 and your number</li>
-<li><code>!rps</code> — Rock Paper Scissors. React with 🪨 Rock, 📄 Paper, or ✂️ Scissors to play!</li>
-<li><code>!fakenews</code> — True/False quiz. Answer with ✅ or ❌ (5 questions)</li>
-<li><code>!flagquiz</code> — Name the flag! 10 rounds</li>
-<li><code>!memory</code> — Emoji memory game (Simon)</li>
-</ul>
-</section>
-
-<section>
-<h2>😂 Fun & Social</h2>
-<ul>
-<li><code>!birthday 25-12-2000</code> — Register your birthday. Bot will ping you on that date.</li>
-<li><code>!poll question / option1 / option2</code> — Quick poll with reactions. Add as many options as you want.</li>
-<li><code>!roast</code> — Light roast FOR FUN. Use <code>!roast @user</code> or <code>!roast</code> to roast yourself</li>
-<li><code>!systemmsg</code> — Random system message</li>
-</ul>
-</section>
-
-<section>
-<h2>🔍 Search, Information & Daily</h2>
-<ul>
-<li><code>!remind 5m Take a break</code> — Set a reminder. Supports s, m, h, d time formats</li>
-<li><code>!pingtest</code> — Measure latency to Discord API.</li>
-<li><code>!ipinfo 8.8.8.8</code> — Simple IP lookup. Enter any IP or domain name to see location, ISP, timezone and more.</li>
-<li><code>!steamstatus</code> — Check if Steam is down</li>
-<li><code>!gameinfo Minecraft</code> — Get Steam game information</li>
-<li><code>!invite statsbot</code> — Get the Live Stats on your server</li>
-</ul>
-</section>
-
-<section>
-<h2>📜 Info</h2>
-<ul>
-<li><code>!serverstats</code> — Show server statistics</li>
-<li><code>!serverinfo</code> — Show info about the server</li>
-<li><code>!joinleaveinfo</code> — Show join/leave statistics for the server</li>
-<li><code>!userinfo @user</code> — Show info about a user</li>
-<li><code>!roleinfo @role</code> — Show info about a role</li>
-</ul>
-</section>
-
-<section>
-<h2>⏰ Misc</h2>
-<ul>
-<li><code>!report @user spam in chat</code> — Report a user to the staff channel</li>
-<li><code>!helpme</code> — Show this help menu with all commands</li>
-<li><code>!helpadmin</code> — Show admin-only commands</li>
-</ul>
-</section>
-
-  <section>
   <h2>🛡️ Admin Commands</h2>
   <div class="admin-box">
     <h3>💰 Economy</h3>
@@ -204,42 +217,10 @@ footer a:hover {
   </div>
 </section>
 
-<style>
-  .admin-box {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 1rem 1.2rem;
-    border-radius: 12px;
-    margin-top: 0.5rem;
-  }
-  .admin-box h3 {
-    margin-top: 1rem;
-    color: #ffcc70;
-  }
-  .admin-box ul {
-    list-style: none;
-    margin: 0.3rem 0 1rem 0;
-    padding-left: 0;
-  }
-  .admin-box li {
-    padding: 0.4rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  }
-</style>
-
-
-<section>
-<h2>🤖 Automatic Log Actions (info)</h2>
-<p>Welcome messages • Birthday pings • Keyword triggers • Random emoji reactions • Laughs on 2+ 😂/🤣 • Rare loot drops • 'Shhh mode' anti-spam</p>
-<p style="margin-top: 1rem;">
-<strong>Birthday pings:</strong> Use <code>!birthday [DD-MM-YYYY]</code> to register your birthday. The bot will ping you on that date (local server time) with a celebration message. Only server staff can view the full birthday list.
-</p>
-<p style="margin-top: 1rem; font-style: italic;">💡 Tip: consider muting the log channel if it gets too noisy.</p>
-</section>
-
 <footer>
-<a href="https://discord.gg/9NdbUZc8j5" target="_blank">Join the Discord</a>
+  <p>Server Botty © 2025 — All rights reserved</p>
 </footer>
 
 </body>
 </html>
+
