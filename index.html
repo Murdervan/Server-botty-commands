@@ -159,6 +159,75 @@ footer a:hover {
 </ul>
 </section>
 
+  <section>
+  <h2>🛡️ Admin Commands</h2>
+  <div class="admin-box">
+    <h3>💰 Economy</h3>
+    <ul>
+      <li>!addmoney @user 1000 — Add coins to a user</li>
+      <li>!delmoney @user 500 — Remove coins from a user</li>
+      <li>!resetbal @user — Reset balance to 0 for a user or all Casino role members</li>
+    </ul>
+
+    <h3>🎂 Birthday Management</h3>
+    <ul>
+      <li>!birthday @user 25-12-2000 — Set a birthday for another user</li>
+      <li>!birthday list — List all saved birthdays</li>
+      <li>!birthday del @user — Delete a user's birthday</li>
+    </ul>
+
+    <h3>🔒 Channel Management</h3>
+    <ul>
+      <li>!lock #channel — Lock a channel so members cannot send messages</li>
+      <li>!unlock #channel — Unlock a channel</li>
+      <li>!say #channel your message — Bot sends message in chosen channel for announcements</li>
+      <li>!channel list — Show names of all text channels (easy to copy for !say or !lock)</li>
+    </ul>
+
+    <h3>⚠️ Moderation</h3>
+    <ul>
+      <li>!warning @user reason — Warn a user</li>
+      <li>!mute @user 10m — Mute a user (supports s, m, h, d)</li>
+      <li>!unmute @user — Unmute a user</li>
+      <li>!kick @user reason — Kick a user</li>
+      <li>!ban @user reason — Ban a user</li>
+      <li>!clean 50 — Clean messages (or use ALL to delete all)</li>
+    </ul>
+
+    <h3>👥 Server Management</h3>
+    <ul>
+      <li>!autorole add RoleName — Add an autorole given to new members</li>
+      <li>!autorole remove RoleName — Remove an autorole</li>
+      <li>!member list — Show server member list</li>
+      <li>!joinleaveinfo — Show join/leave statistics for the server</li>
+    </ul>
+  </div>
+</section>
+
+<style>
+  .admin-box {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1rem 1.2rem;
+    border-radius: 12px;
+    margin-top: 0.5rem;
+  }
+  .admin-box h3 {
+    margin-top: 1rem;
+    color: #ffcc70;
+  }
+  .admin-box ul {
+    list-style: none;
+    margin: 0.3rem 0 1rem 0;
+    padding-left: 0;
+  }
+  .admin-box li {
+    padding: 0.4rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+</style>
+
+
 <section>
 <h2>🤖 Automatic Log Actions (info)</h2>
 <p>Welcome messages • Birthday pings • Keyword triggers • Random emoji reactions • Laughs on 2+ 😂/🤣 • Rare loot drops • 'Shhh mode' anti-spam</p>
