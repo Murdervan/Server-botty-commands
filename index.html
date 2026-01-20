@@ -1,3 +1,22 @@
+<!--
+╔════════════════════════════════════════════════════════════╗
+║                       Serverbotty                          ║
+╠════════════════════════════════════════════════════════════╣
+║  TYPE          ▸  Discord Bot                              ║
+║  AUTHOR        ▸  Murdervan / AI                           ║
+║  NAMESPACE     ▸  https://github.com/Murdervan             ║
+║  VERSION       ▸  v1.0.0                                   ║
+║  LICENSE       ▸  MIT                                      ║
+║  STATUS        ▸  Stable                                   ║
+║  LAST UPDATE   ▸  2025-10-14                               ║
+║  HOMEPAGE      ▸  https://github.com/Murdervan/Server-botty-commands ║
+╠════════════════════════════════════════════════════════════╣
+║  DESCRIPTION  ▸                                            ║ 
+║  A versatile Discord bot featuring casino games, mini-     ║
+║  games, info commands, and powerful admin tools for        ║
+║  server management and moderation.                         ║
+╚════════════════════════════════════════════════════════════╝
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -174,8 +193,8 @@
     <li><a href="#games">🎮 Games</a></li>
     <li><a href="#fun">😂 Fun</a></li>
     <li><a href="#search">🔍 Search</a></li>
-    <li><a href="#misc">⏰ Misc</a></li>
     <li><a href="#info">📜 Info</a></li>
+    <li><a href="#misc">⏰ Misc</a></li>
     <li><a href="#auto">🤖 Auto Logs</a></li>
     <li><a href="#admin">🛡️ Admin</a></li>
   </ul>
@@ -186,8 +205,8 @@
     <h1>Server Botty — Command Overview</h1>
     <p>
       Commands website: <a href="https://is.gd/Serverbotty_commands">https://is.gd/Serverbotty_commands</a><br>
-      Download Bot: <a href="https://is.gd/serverbotty">https://is.gd/serverbotty</a><br>
-      Discord: <a href="https://discord.gg/9NdbUZc8j5">https://discord.gg/9NdbUZc8j5</a>
+      Download Server botty: <a href="https://is.gd/serverbotty">https://is.gd/serverbotty</a><br>
+      For help join: <a href="https://discord.gg/9NdbUZc8j5">https://discord.gg/9NdbUZc8j5</a>
     </p>
   </header>
 
@@ -195,123 +214,121 @@
     <h2>💰 Casino Games</h2>
     <ul>
       <li><code>!bal</code> — Check your balance or another user's balance. Usage: !bal @user</li>
-      <li><code>!rob @user</code> — Try to rob another user's coins once per day. ~50% success</li>
-      <li><code>!drop</code> — Random drops for Casino role (max 3 per time)</li>
-      <li><code>!guessdrop 1-25</code> — Guess the number. Win 2500–10000 coins</li>
-      <li><code>!scoreboard</code> — See who’s winning</li>
-      <li><code>!blackjack 100</code> — Play blackjack</li>
-      <li><code>!roulette 50 red</code> — Bet on red, black, green or number</li>
-      <li><code>!coinflip 100</code> — Flip a coin. Choose red or blue</li>
+      <li><code>!rob @user</code> — Try to rob another user's coins once per day. Success chance ~50%. Fail and you lose coins instead.</li>
+      <li><code>!drop</code> — Random drops for members with the Casino role - Max 3 per time</li>
+      <li><code>!guessdrop 1-25</code> — Guess a number. Bot picks random number. Correct guess gives 2500-10000 coins - Max 3 per day</li>
+      <li><code>!scoreboard</code> — Who is the big Winner?</li>
+      <li><code>!blackjack 100</code> — Play blackjack with betting. React 👊 Hit, ✋ Stand, 💰 Double Down, ✌ Split.</li>
+      <li><code>!roulette 50 red</code> — Play roulette with betting. Choose red, black, green, or a number</li>
+      <li><code>!coinflip 100</code> — Flip a coin with betting. Choose via reactions red or blue</li>
     </ul>
   </section>
 
   <section id="games">
-    <h2>🎮 Games & Quiz</h2>
+    <h2>🎮 Games & Quiz (no betting)</h2>
     <ul>
-      <li><code>!roll 6</code> — Roll a dice</li>
-      <li><code>!rps</code> — Rock Paper Scissors</li>
-      <li><code>!fakenews</code> — True/False quiz</li>
-      <li><code>!flagquiz</code> — Name the flag</li>
-      <li><code>!memory</code> — Emoji memory game</li>
+      <li><code>!roll 6</code> — Roll a dice. Choose number of sides, result will be between 1 and your number</li>
+      <li><code>!rps</code> — Rock Paper Scissors. React with 🪨 Rock, 📄 Paper, or ✂️ Scissors to play!</li>
+      <li><code>!fakenews</code> — True/False quiz. Answer with ✅ or ❌ (5 questions)</li>
+      <li><code>!flagquiz</code> — Name the flag! 10 rounds</li>
+      <li><code>!memory</code> — Emoji memory game (Simon)</li>
     </ul>
   </section>
 
   <section id="fun">
     <h2>😂 Fun & Social</h2>
     <ul>
-      <li><code>!birthday 25-12-2000</code> — Register your birthday</li>
-      <li><code>!poll question / option1 / option2</code> — Quick poll</li>
-      <li><code>!roast</code> — Light roast (fun only)</li>
+      <li><code>!birthday 25-12-2000</code> — Register your birthday. Bot will ping you on that date.</li>
+      <li><code>!poll question / option1 / option2</code> — Quick poll with reactions. Add as many options as you want.</li>
+      <li><code>!roast</code> — Light roast FOR FUN. Use !roast @user or !roast to roast yourself</li>
       <li><code>!systemmsg</code> — Random system message</li>
     </ul>
   </section>
 
   <section id="search">
-    <h2>🔍 Search & Info</h2>
+    <h2>🔍 Search, Information & daily</h2>
     <ul>
-      <li><code>!remind 5m Take a break</code> — Set a reminder</li>
-      <li><code>!pingtest</code> — Check latency</li>
-      <li><code>!ipinfo 8.8.8.8</code> — IP lookup</li>
-      <li><code>!steamstatus</code> — Check Steam status</li>
-      <li><code>!gameinfo Minecraft</code> — Steam game info</li>
-      <li><code>!invite statsbot</code> — Live server stats</li>
+      <li><code>!remind 5m Take a break</code> — Set a reminder. Supports s, m, h, d time formats</li>
+      <li><code>!pingtest</code> — Measure latency to Discord API.</li>
+      <li><code>!ipinfo 8.8.8.8</code> — Simple IP lookup. Enter any IP address or domain name to see location, ISP, timezone and more details (useful for network enthusiasts)</li>
+      <li><code>!steamstatus</code> — Check if Steam is down</li>
+      <li><code>!gameinfo</code> — Get Steam game information. Usage: !gameinfo Battlefield 2042</li>
+      <li><code>!invite statsbot</code> — Get the Live Stats on your server</li>
+    </ul>
+  </section>
+
+  <section id="info">
+    <h2>📜 Info</h2>
+    <ul>
+      <li><code>!serverstats</code> — Show server statistics</li>
+      <li><code>!serverinfo</code> — Show info about the server</li>
+      <li><code>!userinfo @user</code> — Show info about a user</li>
+      <li><code>!roleinfo @role</code> — Show info about a role</li>
     </ul>
   </section>
 
   <section id="misc">
     <h2>⏰ Misc</h2>
     <ul>
-      <li><code>!serverstats</code> — Show server statistics</li>
-      <li><code>!serverinfo</code> — Show server info</li>
-      <li><code>!userinfo @user</code> — User info</li>
-      <li><code>!roleinfo @role</code> — Role info</li>
-    </ul>
-  </section>
-
-   <section id="info">
-    <h2>📜 Info</h2>
-    <ul>
-      <li><code>!report @user reason</code> — Report a user</li>
-      <li><code>!helpme</code> — Help menu</li>
-      <li><code>!helpadmin</code> — Admin-only help</li>
+      <li><code>!report @user spam in chat</code> — Report a user to the staff channel</li>
+      <li><code>!helpme</code> — Show this help menu with all commands</li>
+      <li><code>!helpadmin</code> — Show admin-only commands</li>
     </ul>
   </section>
 
   <section id="auto">
-  <h2>🤖 Automatic Log Actions</h2>
+    <h2>🤖 Automatic Log Actions (info)</h2>
+    <div class="auto-box">
+      <p>• Welcome messages • Birthday pings • Keyword triggers • Random emoji reactions • Rare loot drops • 'Shhh mode' anti-spam</p>
 
-  <div class="auto-box">
-    <p>• Welcome messages • Birthday pings • Keyword triggers • Random emoji reactions • Rare loot drops • 'Shhh mode' anti-spam</p>
+      <p><strong>Birthday pings:</strong> Use <code>!birthday DD-MM-YYYY</code> to register your birthday. The bot will ping you on that date (local server time) with a celebration message.<br>
+      Only server staff can view the full birthday list.</p>
 
-    <p><strong>Birthday pings:</strong> Use !birthday DD-MM-YYYY to register your birthday.<br>
-    The bot will ping you on that date (local server time) with a celebration message.<br>
-    Only server staff can view the full birthday list.</p>
-
-    <p><em>Tip: consider muting the log channel if it gets too noisy.</em></p>
-  </div>
-</section>
+      <p><em>Tip: consider muting the log channel if it gets too noisy.</em></p>
+    </div>
+  </section>
 
   <section id="admin">
     <h2>🛡️ Admin Commands</h2>
     <div class="admin-box">
       <h3>💰 Economy</h3>
       <ul>
-        <li><code>!addmoney @user 1000</code> — Add coins</li>
-        <li><code>!delmoney @user 500</code> — Remove coins</li>
-        <li><code>!resetbal @user</code> — Reset user balance</li>
+        <li><code>!addmoney @user 1000</code> — Add coins to a user</li>
+        <li><code>!delmoney @user 500</code> — Remove coins from a user</li>
+        <li><code>!resetbal @user</code> — Reset balance to 0 for a user or all Casino role members</li>
       </ul>
 
       <h3>🎂 Birthday Management</h3>
       <ul>
-        <li><code>!birthday @user 25-12-2000</code> — Set another user’s birthday</li>
-        <li><code>!birthday list</code> — List all birthdays</li>
-        <li><code>!birthday del @user</code> — Delete a birthday</li>
+        <li><code>!birthday @user 25-12-2000</code> — Set a birthday for another user</li>
+        <li><code>!birthday list</code> — List all saved birthdays</li>
+        <li><code>!birthday del @user</code> — Delete a user's birthday</li>
       </ul>
 
       <h3>🔒 Channel Management</h3>
       <ul>
-        <li><code>!lock #channel</code> — Lock channel</li>
-        <li><code>!unlock #channel</code> — Unlock channel</li>
-        <li><code>!say #channel message</code> — Bot sends message</li>
-        <li><code>!channel list</code> — Show all channels</li>
+        <li><code>!lock #channel</code> — Lock a channel so members cannot send messages</li>
+        <li><code>!unlock #channel</code> — Unlock a channel</li>
+        <li><code>!say #channel your message</code> — Bot sends message in chosen channel for announcements</li>
+        <li><code>!channel list</code> — Show names of all text channels (easy to copy for !say or !lock)</li>
       </ul>
 
       <h3>⚠️ Moderation</h3>
       <ul>
-        <li><code>!warning @user reason</code> — Warn user</li>
-        <li><code>!mute @user 10m</code> — Mute user</li>
-        <li><code>!unmute @user</code> — Unmute user</li>
-        <li><code>!kick @user reason</code> — Kick user</li>
-        <li><code>!ban @user reason</code> — Ban user</li>
-        <li><code>!clean 50</code> — Clean messages</li>
+        <li><code>!warning @user reason</code> — Warn a user</li>
+        <li><code>!mute @user 10m</code> — Mute a user (supports s, m, h, d)</li>
+        <li><code>!unmute @user</code> — Unmute a user</li>
+        <li><code>!kick @user reason</code> — Kick a user</li>
+        <li><code>!ban @user reason</code> — Ban a user</li>
+        <li><code>!clean 50</code> — Clean messages (or use ALL to delete all)</li>
       </ul>
 
       <h3>👥 Server Management</h3>
       <ul>
-        <li><code>!autorole add RoleName</code> — Add autorole</li>
-        <li><code>!autorole remove RoleName</code> — Remove autorole</li>
-        <li><code>!member list</code> — List members</li>
-        <li><code>!joinleaveinfo</code> — Join/leave stats</li>
+        <li><code>!autorole add RoleName</code> — Add an autorole given to new members</li>
+        <li><code>!autorole remove RoleName</code> — Remove an autorole</li>
+        <li><code>!member list</code> — Show server member list</li>
+        <li><code>!joinleaveinfo</code> — Show join/leave statistics for the server</li>
       </ul>
     </div>
   </section>
