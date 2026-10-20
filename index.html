@@ -1,345 +1,418 @@
-<!--
-╔════════════════════════════════════════════════════════════╗
-║                       Serverbotty                          ║
-╠════════════════════════════════════════════════════════════╣
-║  TYPE          ▸  Discord Bot                              ║
-║  AUTHOR        ▸  Murdervan / AI                           ║
-║  NAMESPACE     ▸  https://github.com/Murdervan             ║
-║  VERSION       ▸  v1.0.0                                   ║
-║  LICENSE       ▸  MIT                                      ║
-║  STATUS        ▸  Stable                                   ║
-║  LAST UPDATE   ▸  2025-10-14                               ║
-║  HOMEPAGE      ▸  https://github.com/Murdervan/Server-botty-commands ║
-╠════════════════════════════════════════════════════════════╣
-║  DESCRIPTION  ▸                                            ║ 
-║  A versatile Discord bot featuring casino games, mini-     ║
-║  games, info commands, and powerful admin tools for        ║
-║  server management and moderation.                         ║
-╚════════════════════════════════════════════════════════════╝
--->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#070b10">
+<meta name="description" content="Server Botty — cyber-styled command reference and server control guide.">
 <title>Server Botty — Command Overview</title>
 <style>
-  :root {
-    --bg-dark: #0f0f10;
-    --bg-section: #1a1a1c;
-    --text-main: #f5f5f5;
-    --accent-green: #00ff7f;
-    --accent-blue: #3b82f6;
-  }
+:root{
+  color-scheme:dark;
+  --bg:#070b10;--panel:#0c131b;--panel2:#101b25;--line:rgba(100,145,255,.24);
+  --green:#7c8dff;--cyan:#28d9ff;--purple:#ff58d6;--text:#e4f1f3;--muted:#8ba2ad;
+  --danger:#ff58d6;--radius:16px;--shadow:0 12px 40px rgba(0,0,0,.28)
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:24px}
+body{margin:0;background:
+ radial-gradient(ellipse at 15% 0%,rgba(98,65,255,.13),transparent 34rem),
+ radial-gradient(ellipse at 95% 20%,rgba(255,65,200,.08),transparent 32rem),
+ repeating-linear-gradient(0deg,transparent 0 39px,rgba(100,145,255,.035) 40px),
+ var(--bg);color:var(--text);font:15px/1.6 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.16;background-image:linear-gradient(rgba(100,145,255,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(100,145,255,.09) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(to bottom,black,transparent 75%)}
+a{color:var(--cyan);text-decoration:none}a:hover{color:var(--green)}
+button,input{font:inherit}
+button{cursor:pointer}
+.app{display:grid;grid-template-columns:260px minmax(0,1fr);min-height:100vh}
+.sidebar{position:sticky;top:0;height:100vh;overflow:auto;padding:24px 16px;background:rgba(7,12,17,.92);border-right:1px solid var(--line);backdrop-filter:blur(16px)}
+.brand{display:flex;align-items:center;gap:12px;padding:4px 8px 22px;border-bottom:1px solid var(--line)}
+.brand-mark{width:42px;height:42px;display:grid;place-items:center;border:1px solid var(--green);border-radius:12px;color:var(--green);font:800 18px ui-monospace,monospace;box-shadow:0 0 20px #7c8dff22}.brand-logo{width:52px;height:52px;object-fit:cover;border-radius:13px;border:1px solid #28d9ff88;box-shadow:0 0 22px #28d9ff30}
+.brand strong{display:block;letter-spacing:.12em;font-size:14px}.brand small{color:var(--muted);font:10px ui-monospace,monospace;letter-spacing:.14em}
+.nav-label{margin:22px 10px 8px;color:#59727d;font:700 10px ui-monospace,monospace;letter-spacing:.18em;text-transform:uppercase}
+.nav{display:grid;gap:5px}.nav a{display:flex;align-items:center;gap:11px;padding:10px 12px;border:1px solid transparent;border-radius:10px;color:#9fb3bc;font-size:13px;transition:.18s}
+.nav a:hover,.nav a.active{color:var(--green);background:#7c8dff0b;border-color:#7c8dff26}
+.nav .ico{width:22px;text-align:center;font-size:16px}
+.side-bottom{margin-top:26px;padding:14px;border:1px solid var(--line);border-radius:12px;background:#0b151b}
+.live{display:flex;align-items:center;gap:8px;color:var(--green);font:11px ui-monospace,monospace;letter-spacing:.08em}
+.dot{width:7px;height:7px;background:var(--green);border-radius:50%;box-shadow:0 0 10px var(--green)}
+.side-bottom p{font-size:11px;color:var(--muted);margin:8px 0 0}
+main{min-width:0;padding:28px clamp(18px,4vw,58px) 36px;max-width:1500px;width:100%;margin:auto}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:28px;color:var(--muted);font:11px ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase}
+.breadcrumb span{color:var(--green)}
+.top-actions{display:flex;gap:8px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--line);border-radius:9px;padding:9px 13px;background:#0d171e;color:var(--text);font-size:12px;font-weight:700;transition:.2s}
+.btn:hover{border-color:var(--green);color:var(--green);transform:translateY(-1px)}
+.btn.primary{background:var(--green);border-color:var(--green);color:#06110d}
+.hero{position:relative;overflow:hidden;padding:clamp(25px,5vw,48px);border:1px solid #7c8dff38;border-radius:20px;background:linear-gradient(115deg,rgba(19,24,65,.96),rgba(10,20,30,.94) 55%,rgba(49,15,62,.96));box-shadow:var(--shadow)}
+.hero:after{content:"BOTTY_OS // ONLINE";position:absolute;right:22px;top:20px;color:#7c8dff4a;font:10px ui-monospace,monospace;letter-spacing:.14em}
+.eyebrow{display:flex;align-items:center;gap:9px;color:var(--green);font:11px ui-monospace,monospace;letter-spacing:.16em;text-transform:uppercase}
+h1{font-size:clamp(30px,5vw,52px);line-height:1.08;letter-spacing:-.045em;margin:16px 0 14px;max-width:720px}
+h1 em{font-style:normal;color:var(--green);text-shadow:0 0 24px #7c8dff2b}
+.hero p{max-width:650px;color:#a8bbc3;margin:0;font-size:15px}
+.hero-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:25px}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:16px 0 30px}
+.stat{padding:16px 18px;border:1px solid var(--line);border-radius:13px;background:rgba(12,19,27,.82)}
+.stat small{display:block;color:var(--muted);font:10px ui-monospace,monospace;letter-spacing:.13em;text-transform:uppercase}
+.stat strong{display:block;margin-top:5px;font-size:19px;letter-spacing:-.02em}.stat strong span{color:var(--green)}
+.toolbar{display:flex;align-items:center;gap:12px;justify-content:space-between;margin:28px 0 20px;flex-wrap:wrap}
+.search-wrap{position:relative;flex:1;min-width:220px;max-width:520px}
+.search-wrap:before{content:"⌕";position:absolute;left:13px;top:7px;font-size:22px;color:var(--green)}
+#search{width:100%;padding:12px 14px 12px 40px;background:#0b131a;border:1px solid var(--line);border-radius:10px;color:var(--text);outline:none}
+#search:focus{border-color:var(--green);box-shadow:0 0 0 3px #7c8dff14}
+.hint{font:10px ui-monospace,monospace;color:var(--muted)}
+.section{margin:28px 0 34px;scroll-margin-top:20px}
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:14px}
+.section-title{display:flex;align-items:center;gap:12px}
+.section-icon{width:38px;height:38px;display:grid;place-items:center;border:1px solid var(--line);border-radius:11px;background:#7c8dff09;font-size:18px}
+h2{font-size:21px;line-height:1.2;margin:0;letter-spacing:-.025em}
+.section-sub{color:var(--muted);font-size:12px;margin:5px 0 0}
+.count{font:10px ui-monospace,monospace;color:var(--green);border:1px solid var(--line);border-radius:6px;padding:4px 7px}
+.command-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.command{min-width:0;padding:15px 16px;border:1px solid rgba(132,164,177,.14);border-radius:12px;background:linear-gradient(140deg,rgba(14,24,33,.94),rgba(10,16,23,.94));transition:border-color .18s,transform .18s}
+.command:hover{border-color:#7c8dff4f;transform:translateY(-2px)}
+.command-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+code.cmd{display:inline-block;color:var(--green);background:#020807;border:1px solid #7c8dff1b;border-radius:6px;padding:5px 8px;font:600 12px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace;overflow-wrap:anywhere}
+.copy{flex-shrink:0;border:1px solid #78909b2b;background:#15212a;color:#91a9b3;border-radius:7px;padding:5px 8px;font-size:11px}
+.copy:hover{color:var(--green);border-color:#7c8dff4a}
+.command p{margin:11px 0 0;color:#a7b9c1;font-size:12px;line-height:1.55}
+.command[hidden],.section[hidden]{display:none!important}
+.empty{display:none;padding:28px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:12px}
+.notice{padding:18px;border:1px solid #28d9ff25;border-radius:12px;background:#28d9ff08;color:#a9c1ca;font-size:13px}
+.notice strong{color:var(--cyan)}
+.admin-groups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.admin-group{padding:17px;border:1px solid var(--line);border-radius:13px;background:#0b131a}
+.admin-group h3{font-size:14px;margin:0 0 12px;color:var(--cyan)}
+.admin-group .command{margin-top:8px;background:#0d171e}
+footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:20px;margin-top:42px;color:#70858f;font-size:11px}
+footer a{color:#9ab0ba}
+.toast{position:fixed;bottom:22px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:var(--green);color:#06110d;padding:10px 15px;border-radius:9px;font-size:12px;font-weight:800;transition:.2s;z-index:10}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.mobile-menu{display:none}
+@media(max-width:950px){.app{grid-template-columns:1fr}.sidebar{position:relative;height:auto;padding:13px 16px;border-right:0;border-bottom:1px solid var(--line)}.brand{padding-bottom:12px}.nav-label,.side-bottom{display:none}.nav{display:flex;overflow-x:auto;padding-top:10px}.nav a{white-space:nowrap;padding:8px 10px}.nav .ico{width:auto}.command-grid{grid-template-columns:1fr 1fr}main{padding-top:20px}}
+@media(max-width:620px){main{padding:15px 13px 26px}.topbar{align-items:flex-start;flex-direction:column;margin-bottom:16px}.hero{padding:25px 20px}.hero:after{display:none}.stats{gap:8px}.stat{padding:12px 10px}.stat strong{font-size:16px}.stat small{font-size:8px}.command-grid,.admin-groups{grid-template-columns:1fr}.section-head{align-items:center}h2{font-size:18px}.hero-links .btn{flex:1}.hint{display:none}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
 
-  body {
-    font-family: "Segoe UI", sans-serif;
-    background: var(--bg-dark);
-    color: var(--text-main);
-    margin: 0;
-    display: flex;
-    min-height: 100vh;
-  }
+/* HUD V4 neon boost */
+:root{--neon-blue:#28d9ff;--neon-purple:#9272ff;--neon-pink:#ff4fd8}
+.card,.command-card,.cmd-card,.stat,.panel,.module-card,.category-card,.embed,.command,.tool-card{
+  border-color:rgba(40,217,255,.42)!important;
+  box-shadow:0 0 0 1px rgba(40,217,255,.07),0 0 16px rgba(40,217,255,.12),inset 0 0 22px rgba(146,114,255,.055);
+  transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease;
+}
+.card:hover,.command-card:hover,.cmd-card:hover,.stat:hover,.panel:hover,.module-card:hover,.category-card:hover,.embed:hover,.command:hover,.tool-card:hover{
+  border-color:rgba(255,79,216,.78)!important;
+  box-shadow:0 0 0 1px rgba(255,79,216,.18),0 0 22px rgba(40,217,255,.22),0 0 34px rgba(255,79,216,.13),inset 0 0 26px rgba(146,114,255,.09);
+  transform:translateY(-2px);
+}
+input,select,.search,input[type="search"]{
+  border-color:rgba(40,217,255,.55)!important;
+  box-shadow:0 0 13px rgba(40,217,255,.12),inset 0 0 12px rgba(146,114,255,.08);
+}
+input:focus,select:focus,.search:focus-within,input[type="search"]:focus{
+  outline:none;border-color:var(--neon-pink)!important;
+  box-shadow:0 0 0 2px rgba(255,79,216,.18),0 0 24px rgba(40,217,255,.2);
+}
+.btn,.chip,.filter-btn{
+  border-color:rgba(40,217,255,.42)!important;
+  box-shadow:0 0 10px rgba(40,217,255,.08);
+}
+.btn:hover,.chip:hover,.filter-btn:hover{
+  border-color:var(--neon-pink)!important;
+  box-shadow:0 0 16px rgba(255,79,216,.2),0 0 22px rgba(40,217,255,.12);
+}
+h1,h2,h3,.section-title{
+  text-shadow:0 0 14px rgba(40,217,255,.2),0 0 25px rgba(146,114,255,.13);
+}
 
-  /* Sidebar */
-  nav {
-    width: 250px;
-    background: #141416;
-    padding: 1rem;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    overflow-y: auto;
-    border-right: 1px solid rgba(255,255,255,0.1);
-  }
 
-  nav h2 {
-    text-align: center;
-    color: var(--accent-blue);
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
-  }
+/* ULTRA NEON HUD — intense electric blue, violet and hot pink */
+:root{--green:#22eaff;--cyan:#23dfff;--purple:#bd38ff;--danger:#ff3fd2;--line:rgba(35,223,255,.42);--shadow:0 0 18px rgba(0,174,255,.24),0 0 42px rgba(147,35,255,.18)}
+body{
+ background:
+ radial-gradient(ellipse at 80% 8%,rgba(112,0,255,.23),transparent 35%),
+ radial-gradient(ellipse at 10% 48%,rgba(0,111,255,.18),transparent 40%),
+ radial-gradient(ellipse at 70% 90%,rgba(255,0,191,.13),transparent 34%),
+ #030511!important;
+}
+.sidebar{border-right:1px solid #1edfffaa!important;box-shadow:8px 0 35px #006dff24,inset -1px 0 16px #ad25ff12}
+.brand{border-bottom-color:#27e7ff77!important}
+.brand-logo{width:58px!important;height:58px!important;border:2px solid #21eaff!important;box-shadow:0 0 10px #21eaff,0 0 28px #006dff,0 0 45px #b52aff66!important}
+.nav a{border:1px solid transparent!important;transition:all .18s ease}
+.nav a:hover,.nav a.active{border-color:#25eaff!important;background:linear-gradient(90deg,#073b99a8,#35105e88)!important;box-shadow:0 0 12px #007bff,0 0 24px #a21cff,inset 0 0 15px #008dff33!important}
+.hero{
+ border:2px solid #1eeaff!important;
+ border-radius:20px!important;
+ background:linear-gradient(120deg,rgba(0,28,86,.98),rgba(9,8,39,.97) 48%,rgba(52,0,75,.96))!important;
+ box-shadow:0 0 8px #24eaff,0 0 22px #006dff,0 0 48px #9d1cff88,inset 0 0 36px #123aff55!important;
+}
+.hero:before{content:"";position:absolute;inset:7px;border:1px solid #bf35ff99;border-radius:13px;pointer-events:none;box-shadow:inset 0 0 18px #9b28ff22}
+.hero:after{color:#28eaffaa!important;text-shadow:0 0 12px #007bff!important}
+h1{font-size:clamp(34px,4.8vw,60px)!important;line-height:1.02!important;text-shadow:0 0 8px #24eaff,0 0 22px #007bff,0 0 36px #a62bff!important}
+h1 em{color:#ff5be5!important;text-shadow:0 0 8px #ff3bd4,0 0 22px #a21cff,0 0 38px #ff20bd!important}
+.card,.command-card,.cmd-card,.stat,.panel,.module-card,.category-card,.embed,.command,.tool-card,.admin-group,.command-group{
+ border:1px solid #1bdfff!important;
+ background:linear-gradient(145deg,rgba(3,16,49,.97),rgba(10,7,35,.97) 65%,rgba(30,5,51,.96))!important;
+ box-shadow:0 0 7px #16dfff,0 0 18px #005dff66,inset 0 0 20px #7d20ff18!important;
+ transition:all .2s ease!important;
+}
+.card:nth-child(3n),.command-card:nth-child(3n),.command:nth-child(3n),.admin-group:nth-child(3n){
+ border-color:#e73bff!important;
+ box-shadow:0 0 7px #ed36ff,0 0 18px #a51bff66,inset 0 0 22px #ed36ff18!important;
+}
+.card:hover,.command-card:hover,.cmd-card:hover,.stat:hover,.panel:hover,.module-card:hover,.category-card:hover,.embed:hover,.command:hover,.tool-card:hover,.admin-group:hover,.command-group:hover{
+ transform:translateY(-3px)!important;border-color:#ff4bdf!important;
+ box-shadow:0 0 10px #ff4bdf,0 0 25px #a52bff,0 0 38px #006dff99,inset 0 0 25px #e22bff24!important;
+}
+.btn,.chip,.filter-btn,.copy{
+ border:1px solid #28eaff!important;
+ box-shadow:0 0 8px #008cff,0 0 17px #6b28ff44,inset 0 0 12px #008cff22!important;
+}
+.btn.primary,.btn:hover,.chip:hover,.filter-btn:hover,.copy:hover{
+ border-color:#ff45db!important;background:linear-gradient(110deg,#064dcb,#7b16a8)!important;
+ box-shadow:0 0 10px #1beaff,0 0 23px #a21cff,0 0 30px #ff31d277!important;
+}
+input,select,.search,input[type=search]{border:1px solid #22eaff!important;box-shadow:0 0 10px #007bff88,inset 0 0 14px #6425ff22!important}
+input:focus,select:focus,.search:focus-within,input[type=search]:focus{border-color:#ff46de!important;box-shadow:0 0 0 2px #ff46de55,0 0 20px #0adfff,0 0 28px #a21cff!important;outline:none}
+code,.cmd{color:#29eaff!important;text-shadow:0 0 9px #008dff!important}
+h2,h3,.section-title{ text-shadow:0 0 9px #16dfff,0 0 20px #7c20ff!important}
+footer{border-top:1px solid #25eaff99!important;box-shadow:0 -8px 30px #0b5dff20!important}
 
-  nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
 
-  nav li {
-    margin-bottom: 0.8rem;
-  }
+/* Final header cleanup: original logo only + compact right-aligned actions */
+.brand.brand-logo-only{display:flex!important;align-items:center;justify-content:center;padding:10px 8px!important;min-height:88px;border-bottom:1px solid #24dfff66!important}
+.brand.brand-logo-only .brand-logo{display:block!important;width:100%!important;max-width:190px!important;height:auto!important;max-height:110px!important;object-fit:contain!important;border:0!important;border-radius:0!important;box-shadow:0 0 14px #18dfff66,0 0 34px #146bff55!important}
+.hero.hero-compact{position:relative;min-height:88px!important;padding:18px 22px!important;display:flex!important;align-items:center!important;justify-content:flex-end!important;background:linear-gradient(110deg,rgba(0,16,52,.97),rgba(10,5,38,.98),rgba(38,0,60,.97))!important}
+.hero.hero-compact:before{content:"";position:absolute;inset:6px;border:1px solid #c53cffaa;border-radius:13px;pointer-events:none;box-shadow:inset 0 0 20px #702aff33}
+.hero-actions{position:relative;z-index:2;display:flex;align-items:center;justify-content:flex-end;gap:12px;flex-wrap:wrap;width:100%}
+.hero-actions .btn{min-height:46px;padding:12px 17px!important;font-weight:800;white-space:nowrap}
+.statsbot-invite{display:inline-flex!important;align-items:center;gap:9px}
+.statsbot-icon{width:23px;height:23px;object-fit:contain;border-radius:50%;filter:drop-shadow(0 0 5px #20dfff)}
+@media(max-width:680px){.hero.hero-compact{padding:15px!important}.hero-actions{justify-content:center}.hero-actions .btn{flex:1 1 150px;justify-content:center}.brand.brand-logo-only .brand-logo{max-width:145px!important}}
 
-  nav a {
-    color: var(--text-main);
-    text-decoration: none;
-    display: block;
-    padding: 0.6rem 0.8rem;
-    border-radius: 6px;
-    transition: 0.2s;
-  }
 
-  nav a:hover {
-    background: var(--accent-blue);
-    color: white;
-  }
+/* Header actions aligned right: Server Botty, StatsBot, GitHub Issues */
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:18px}
+.top-actions{display:flex;align-items:center;justify-content:flex-end;gap:10px;margin-left:auto;flex-wrap:wrap}
+.statsbot-top{display:inline-flex!important;align-items:center;gap:8px;color:#2ce7ff!important;border-color:#2ce7ff!important;text-transform:uppercase;letter-spacing:.04em}
+.statsbot-top img{width:24px;height:24px;object-fit:contain;border-radius:50%;filter:drop-shadow(0 0 7px #22dcff)}
+@media(max-width:760px){.topbar{align-items:flex-start;flex-direction:column}.top-actions{width:100%;justify-content:flex-start}.top-actions .btn{flex:1 1 auto;justify-content:center}}
 
-  /* Main content */
-  main {
-    margin-left: 270px;
-    padding: 2rem;
-    flex: 1;
-  }
 
-  header {
-    text-align: center;
-    margin-bottom: 2rem;
-  }
+/* StatsBot card aligned with the two dashboard stat cards */
+.stats{grid-template-columns:repeat(3,minmax(0,1fr))!important;align-items:stretch}
+.statsbot-stat{display:flex!important;flex-direction:column;align-items:flex-start;gap:9px;min-height:150px}
+.statsbot-stat-head{display:flex;align-items:center;gap:10px}
+.statsbot-stat-head img{width:36px;height:36px;object-fit:contain;border-radius:50%;filter:drop-shadow(0 0 7px #22eaff);border:1px solid #22eaff66}
+.statsbot-stat-head small{display:block!important;font-size:9px!important;letter-spacing:1.5px;color:#aebaff;margin-bottom:4px}
+.statsbot-stat-head strong{display:block;font-size:16px!important}
+.statsbot-stat p{margin:0!important;color:#c8d8ff;font-size:11px;line-height:1.45}
+.statsbot-stat-button{margin-top:auto;text-decoration:none;display:inline-flex;align-items:center}
+@media(max-width:900px){.stats{grid-template-columns:1fr!important}}
 
-  header h1 {
-    margin: 0;
-    font-size: 2rem;
-    color: var(--accent-blue);
-  }
-
-  header p {
-    font-size: 0.95rem;
-    line-height: 1.4;
-  }
-
-  section {
-    background: var(--bg-section);
-    margin-bottom: 2rem;
-    padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.4);
-  }
-
-  h2 {
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    padding-bottom: 0.3rem;
-    color: var(--accent-blue);
-  }
-
-  ul {
-    list-style: none;
-    padding-left: 0;
-    margin: 0.6rem 0;
-  }
-
-  li {
-    background: rgba(255,255,255,0.03);
-    margin-bottom: 0.4rem;
-    padding: 0.5rem 0.8rem;
-    border-radius: 6px;
-  }
-
-  li code {
-    color: var(--accent-green);
-    background: #000;
-    padding: 0.2rem 0.4rem;
-    border-radius: 4px;
-    font-family: monospace;
-  }
-
-  /* Admin Box */
-  .admin-box {
-    background: var(--bg-section);
-    padding: 1rem 1.2rem;
-    border-radius: 10px;
-  }
-
-  .admin-box h3 {
-    color: var(--accent-blue);
-    margin-top: 1rem;
-  }
-
-  footer {
-    text-align: center;
-    font-size: 0.9rem;
-    margin: 2rem 0 1rem;
-    color: #999;
-  }
-
-  /* Mobile */
-  @media (max-width: 850px) {
-    nav {
-      position: static;
-      width: 100%;
-      border-right: none;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    nav a {
-      margin: 0.2rem;
-      padding: 0.4rem 0.6rem;
-      font-size: 0.9rem;
-    }
-    main {
-      margin-left: 0;
-      padding: 1rem;
-    }
-  }
 </style>
 </head>
 <body>
-
-<nav>
-  <h2>Menu</h2>
-  <ul>
-    <li><a href="#casino">💰 Casino</a></li>
-    <li><a href="#games">🎮 Games</a></li>
-    <li><a href="#fun">😂 Fun</a></li>
-    <li><a href="#search">🔍 Search</a></li>
-    <li><a href="#info">📜 Info</a></li>
-    <li><a href="#misc">⏰ Misc</a></li>
-    <li><a href="#auto">🤖 Auto Logs</a></li>
-    <li><a href="#admin">🛡️ Admin</a></li>
-  </ul>
-</nav>
-
+<div class="app">
+<aside class="sidebar">
+  <div class="brand brand-logo-only"><img class="brand-logo" src="https://github.com/Murdervan/Server-botty-commands/blob/main/image/Server%20Botty.png?raw=true" alt="Original Play’N’Chill Bot logo"></div>
+  <div class="nav-label">Navigation // Modules</div>
+  <nav class="nav" aria-label="Main navigation">
+    <a href="#overview"><span class="ico">⌂</span> Overview</a>
+    <a href="#casino"><span class="ico">◈</span> Casino</a>
+    <a href="#games"><span class="ico">▣</span> Games & Quiz</a>
+    <a href="#fun"><span class="ico">☻</span> Fun & Social</a>
+    <a href="#search-info"><span class="ico">⌕</span> Search & Daily</a>
+    <a href="#misc"><span class="ico">◷</span> Misc</a>
+    <a href="#automation"><span class="ico">⌁</span> Auto Logs</a>
+    <a href="#admin"><span class="ico">⛨</span> Admin Tools</a>
+  </nav>
+  <div class="side-bottom"><div class="live"><span class="dot"></span> BOT COMMANDS ONLINE</div><p>Official command overview · Server Botty<br>Search commands and copy them with one click.</p></div>
+</aside>
 <main>
-  <header>
-    <h1>Server Botty — Command Overview</h1>
-    <p>
-      Commands website: <a href="https://is.gd/Serverbotty_commands">https://is.gd/Serverbotty_commands</a><br>
-      Invite Server botty: <a href="https://is.gd/server_botty">https://is.gd/server_botty</a><br>
-    </p>
+  <div class="topbar"><div class="breadcrumb">SERVER BOTTY / <span>COMMAND OVERVIEW</span></div><div class="top-actions"><a class="btn primary" href="https://is.gd/server_botty" target="_blank" rel="noopener">＋ Invite Server Botty</a><a class="btn" href="https://github.com/Murdervan?tab=repositories" target="_blank" rel="noopener">↗ GitHub Issues</a></div></div>
+  <header class="hero" id="overview">
+    <div class="eyebrow"><span class="dot"></span> DISCORD BOT // COMMAND OVERVIEW</div>
+    <h1>GET SERVER BOTTY<br><em>TO YOUR OWN SERVER!</em></h1>
+    <p>The ultimate Discord bot with games, economy, fun commands, moderation and much more. Easy to use, powerful and always online.</p>
+    <div class="hero-links">
+      <a class="btn primary" href="https://is.gd/server_botty" target="_blank" rel="noopener">＋ Invite Server Botty</a>
+    </div>
   </header>
+  <div class="stats">
+    <div class="stat"><small>Command categories</small><strong><span>09</span> categories</strong></div>
+    <div class="stat"><small>Quick actions</small><strong><span>Copy</span> commands</strong></div>
+    <div class="stat statsbot-stat">
+      <div class="statsbot-stat-head"><img src="https://github.com/Murdervan/Server-botty-commands/blob/main/image/StatsBot.png?raw=true" alt="StatsBot logo"><div><small>SERVER ANALYTICS</small><strong><span>Invite</span> StatsBot</strong></div></div>
+      <p>Track your server’s activity and view live member statistics with StatsBot.</p>
+      <a class="btn statsbot-stat-button" href="https://discord.com/oauth2/authorize?client_id=1403937945236541511" target="_blank" rel="noopener" aria-label="Invite StatsBot">＋ INVITE STATSBOT</a>
+    </div>
+  </div>
+  <div class="toolbar"><div class="search-wrap"><input id="search" type="search" placeholder="Search commands… e.g. !ban, birthday, balance" aria-label="Search commands"></div><span class="hint">TIP: CLICK COPY TO COPY A COMMAND</span></div>
+  <div class="empty" id="empty">No matching commands found. Try another search.</div>
 
-  <section id="casino">
-    <h2>💰 Casino Games</h2>
-    <ul>
-      <li><code>!lotto</code> — Buy lotto tickets. Usage: !lotto 5 or how many u wanna buy.</li>
-      <li><code>!lottokupon</code> — See your active lotto tickets</li>
-      <li><code>!lottostats</code> — See lotto statistics and previous winners</li>
-      <li><code>!bal</code> — Check your balance or another user's balance. Usage: !bal @user</li>
-      <li><code>!rob @user</code> — Try to rob another user's coins once per day. Success chance ~50%. Fail and you lose coins instead.</li>
-      <li><code>!drop</code> — Random drops for members with the Casino role - Max 3 per time</li>
-      <li><code>!guessdrop 1-25</code> — Guess a number. Bot picks random number. Correct guess gives 2500-10000 coins - Max 3 per day</li>
-      <li><code>!scoreboard</code> — Who is the big Winner?</li>
-      <li><code>!blackjack 100</code> — Play blackjack with betting. React 👊 Hit, ✋ Stand, 💰 Double Down, ✌ Split.</li>
-      <li><code>!roulette 50 red</code> — Play roulette with betting. Choose red, black, green, or a number</li>
-      <li><code>!coinflip 100</code> — Flip a coin with betting. Choose via reactions red or blue</li>
-    </ul>
-  </section>
-
-  <section id="games">
-    <h2>🎮 Games & Quiz (no betting)</h2>
-    <ul>
-      <li><code>!roll 6</code> — Roll a dice. Choose number of sides, result will be between 1 and your number</li>
-      <li><code>!rps</code> — Rock Paper Scissors. React with 🪨 Rock, 📄 Paper, or ✂️ Scissors to play!</li>
-      <li><code>!fakenews</code> — True/False quiz. Answer with ✅ or ❌ (5 questions)</li>
-      <li><code>!flagquiz</code> — Name the flag! 10 rounds</li>
-      <li><code>!memory</code> — Emoji memory game (Simon)</li>
-    </ul>
-  </section>
-
-  <section id="fun">
-    <h2>😂 Fun & Social</h2>
-    <ul>
-      <li><code>!birthday 25-12-2000</code> — Register your birthday. Bot will ping you on that date.</li>
-      <li><code>!poll question / option1 / option2</code> — Quick poll with reactions. Add as many options as you want.</li>
-      <li><code>!roast</code> — Light roast FOR FUN. Use !roast @user or !roast to roast yourself</li>
-      <li><code>!systemmsg</code> — Random system message</li>
-    </ul>
-  </section>
-
-  <section id="search">
-    <h2>🔍 Search, Information & daily</h2>
-    <ul>
-      <li><code>!remind 5m Take a break</code> — Set a reminder. Supports s, m, h, d time formats</li>
-      <li><code>!pingtest</code> — Measure latency to Discord API.</li>
-      <li><code>!ipinfo 8.8.8.8</code> — Simple IP lookup. Enter any IP address or domain name to see location, ISP, timezone and more details (useful for network enthusiasts)</li>
-      <li><code>!steamstatus</code> — Check if Steam is down</li>
-      <li><code>!gameinfo</code> — Get Steam game information. Usage: !gameinfo Battlefield 2042</li>
-      <li><code>!invite statsbot</code> — Get the Live Stats on your server</li>
-    </ul>
-  </section>
-
-  <section id="info">
-    <h2>📜 Info</h2>
-    <ul>
-      <li><code>!serverstats</code> — Show server statistics</li>
-      <li><code>!serverinfo</code> — Show info about the server</li>
-      <li><code>!userinfo @user</code> — Show info about a user</li>
-      <li><code>!roleinfo @role</code> — Show info about a role</li>
-    </ul>
-  </section>
-
-  <section id="misc">
-    <h2>⏰ Misc</h2>
-    <ul>
-      <li><code>!report @user spam in chat</code> — Report a user to the staff channel</li>
-      <li><code>!helpme</code> — Show this help menu with all commands</li>
-      <li><code>!helpadmin</code> — Show admin-only commands</li>
-    </ul>
-  </section>
-
-  <section id="auto">
-    <h2>🤖 Automatic Log Actions (info)</h2>
-    <div class="auto-box">
-      <p>• Welcome messages • Birthday pings • Keyword triggers • Random emoji reactions • Rare loot drops • 'Shhh mode' anti-spam • Lotto every week</p>
-
-      <p><strong>Birthday pings:</strong> Use <code>!birthday DD-MM-YYYY</code> to register your birthday. The bot will ping you on that date (local server time) with a celebration message.<br>
-      Only server staff can view the full birthday list.</p>
-
-      <p><em>Tip: consider muting the log channel if it gets too noisy.</em></p>
+  <section class="section" id="casino" data-section>
+    <div class="section-head"><div class="section-title"><div class="section-icon">💰</div><div><h2>Casino & Economy</h2><p class="section-sub">Coins, bets, drops and leaderboard</p></div></div><span class="count">ECONOMY</span></div>
+    <div class="command-grid">
+      <article class="command" data-search="lotto lottery tickets"><div class="command-top"><code class="cmd">!lotto 10</code><button class="copy" data-copy="!lotto 10">Copy</button></div><p>Buy lottery tickets. Choose an amount — up to 100 tickets.</p></article>
+      <article class="command" data-search="lottokupon lotto active tickets"><div class="command-top"><code class="cmd">!lottokupon</code><button class="copy" data-copy="!lottokupon">Copy</button></div><p>View your active lottery tickets.</p></article>
+      <article class="command" data-search="lottostats winners statistics"><div class="command-top"><code class="cmd">!lottostats</code><button class="copy" data-copy="!lottostats">Copy</button></div><p>View lottery statistics and previous winners.</p></article>
+      <article class="command" data-search="bal balance coins money user"><div class="command-top"><code class="cmd">!bal @user</code><button class="copy" data-copy="!bal @user">Copy</button></div><p>Check your balance or another user’s balance.</p></article>
+      <article class="command" data-search="rob steal coins daily"><div class="command-top"><code class="cmd">!rob @user</code><button class="copy" data-copy="!rob @user">Copy</button></div><p>Try to steal coins from another user once per day. Success chance is about 50%; if you fail, you lose coins instead.</p></article>
+      <article class="command" data-search="drop random casino role loot"><div class="command-top"><code class="cmd">!drop</code><button class="copy" data-copy="!drop">Copy</button></div><p>Get random drops (for members with the Casino role). Maximum 3 per time.</p></article>
+      <article class="command" data-search="guessdrop guess number coins"><div class="command-top"><code class="cmd">!guessdrop 1-25</code><button class="copy" data-copy="!guessdrop 1">Copy</button></div><p>Guess a number. A correct guess awards 2,500–10,000 coins. Maximum 3 times per day.</p></article>
+      <article class="command" data-search="scoreboard winner leaderboard"><div class="command-top"><code class="cmd">!scoreboard</code><button class="copy" data-copy="!scoreboard">Copy</button></div><p>See who is leading the scoreboard.</p></article>
+      <article class="command" data-search="blackjack bet hit stand double split"><div class="command-top"><code class="cmd">!blackjack 100</code><button class="copy" data-copy="!blackjack 100">Copy</button></div><p>Play blackjack with a bet. React with 👊 Hit, ✋ Stand, 💰 Double Down, or ✌ Split.</p></article>
+      <article class="command" data-search="roulette red black green number bet"><div class="command-top"><code class="cmd">!roulette 50 red</code><button class="copy" data-copy="!roulette 50 red">Copy</button></div><p>Play roulette. Choose red, black, green, or a number. You can also enter the bet and color in reverse order.</p></article>
+      <article class="command" data-search="coinflip coin flip red blue bet"><div class="command-top"><code class="cmd">!coinflip 100</code><button class="copy" data-copy="!coinflip 100">Copy</button></div><p>Flip a coin with a bet. Choose using the red or blue reaction.</p></article>
     </div>
   </section>
 
-  <section id="admin">
-    <h2>🛡️ Admin Commands</h2>
-    <div class="admin-box">
-      <h3>💰 Economy</h3>
-      <ul>
-        <li><code>!addmoney @user 1000</code> — Add coins to a user</li>
-        <li><code>!delmoney @user 500</code> — Remove coins from a user</li>
-        <li><code>!resetbal @user</code> — Reset balance to 0 for a user or all Casino role members</li>
-      </ul>
-
-      <h3>🎂 Birthday Management</h3>
-      <ul>
-        <li><code>!birthday @user 25-12-2000</code> — Set a birthday for another user</li>
-        <li><code>!birthday list</code> — List all saved birthdays</li>
-        <li><code>!birthday del @user</code> — Delete a user's birthday</li>
-      </ul>
-
-      <h3>🔒 Channel Management</h3>
-      <ul>
-        <li><code>!lock #channel</code> — Lock a channel so members cannot send messages</li>
-        <li><code>!unlock #channel</code> — Unlock a channel</li>
-        <li><code>!say #channel your message</code> — Bot sends message in chosen channel for announcements</li>
-        <li><code>!channel list</code> — Show names of all text channels (easy to copy for !say or !lock)</li>
-      </ul>
-
-      <h3>⚠️ Moderation</h3>
-      <ul>
-        <li><code>!warning @user reason</code> — Warn a user</li>
-        <li><code>!mute @user 10m</code> — Mute a user (supports s, m, h, d)</li>
-        <li><code>!unmute @user</code> — Unmute a user</li>
-        <li><code>!kick @user reason</code> — Kick a user</li>
-        <li><code>!ban @user reason</code> — Ban a user</li>
-        <li><code>!clean 50</code> — Clean messages (or use ALL to delete all)</li>
-      </ul>
-
-      <h3>👥 Server Management</h3>
-      <ul>
-        <li><code>!autorole add RoleName</code> — Add an autorole given to new members</li>
-        <li><code>!autorole remove RoleName</code> — Remove an autorole</li>
-        <li><code>!member list</code> — Show server member list</li>
-        <li><code>!joinleaveinfo</code> — Show join/leave statistics for the server</li>
-      </ul>
+  <section class="section" id="games" data-section>
+    <div class="section-head"><div class="section-title"><div class="section-icon">🎮</div><div><h2>Games & Quiz</h2><p class="section-sub">Mini-games without betting</p></div></div><span class="count">PLAY</span></div>
+    <div class="command-grid">
+      <article class="command" data-search="roll dice sides"><div class="command-top"><code class="cmd">!roll 6</code><button class="copy" data-copy="!roll 6">Copy</button></div><p>Roll a die with the number of sides you choose. The result will be between 1 and your chosen number.</p></article>
+      <article class="command" data-search="rps rock paper scissors"><div class="command-top"><code class="cmd">!rps</code><button class="copy" data-copy="!rps">Copy</button></div><p>Play Rock Paper Scissors using 🪨, 📄, or ✂️.</p></article>
     </div>
   </section>
 
-  <footer>
-    <p>Created by: Murdervan | <a href="https://github.com/Murdervan">https://github.com/Murdervan</a></p>
-    <p>Server Botty © 2025 — All rights reserved</p>
-  </footer>
+  <section class="section" id="fun" data-section>
+    <div class="section-head"><div class="section-title"><div class="section-icon">😂</div><div><h2>Fun & Social</h2><p class="section-sub">Community tools and interaction</p></div></div><span class="count">SOCIAL</span></div>
+    <div class="command-grid">
+      <article class="command" data-search="birthday date ping celebration"><div class="command-top"><code class="cmd">!birthday 25-12-2000</code><button class="copy" data-copy="!birthday 25-12-2000">Copy</button></div><p>Register your birthday so the bot can wish you a happy birthday on that date.</p></article>
+      <article class="command" data-search="poll question options vote"><div class="command-top"><code class="cmd">!poll question / option1 / option2</code><button class="copy" data-copy="!poll question / option1 / option2">Copy</button></div><p>Create a quick poll using reactions. Add as many options as you need.</p></article>
+      <article class="command" data-search="roast joke fun user"><div class="command-top"><code class="cmd">!roast @user</code><button class="copy" data-copy="!roast @user">Copy</button></div><p>A light-hearted roast for fun. Use the command without a mention to roast yourself.</p></article>
+    </div>
+  </section>
+
+  <section class="section" id="search-info" data-section>
+    <div class="section-head"><div class="section-title"><div class="section-icon">🔍</div><div><h2>Search & Daily Tools</h2><p class="section-sub">Reminders, network checks and game status</p></div></div><span class="count">UTILITIES</span></div>
+    <div class="command-grid">
+      <article class="command" data-search="remind reminder timer seconds minutes hours days"><div class="command-top"><code class="cmd">!remind 5m Take a break</code><button class="copy" data-copy="!remind 5m Take a break">Copy</button></div><p>Set a reminder. Supported time formats: s, m, h, and d.</p></article>
+      <article class="command" data-search="invite statsbot live stats"><div class="command-top"><code class="cmd">!invite statsbot</code><button class="copy" data-copy="!invite statsbot">Copy</button></div><p>Get live statistics for your server.</p></article>
+    </div>
+  </section>
+
+  
+
+  <section class="section" id="misc" data-section>
+    <div class="section-head"><div class="section-title"><div class="section-icon">⏰</div><div><h2>Misc & Reports</h2><p class="section-sub">Help commands and staff reporting</p></div></div><span class="count">TOOLS</span></div>
+    <div class="command-grid">
+      <article class="command" data-search="report spam staff report user"><div class="command-top"><code class="cmd">!report @user spam in chat</code><button class="copy" data-copy="!report @user spam in chat">Copy</button></div><p>Report a user to the staff channel.</p></article>
+      <article class="command" data-search="helpme help commands menu"><div class="command-top"><code class="cmd">!helpme</code><button class="copy" data-copy="!helpme">Copy</button></div><p>Show this help menu in Discord.</p></article>
+      <article class="command" data-search="helpadmin admin help commands"><div class="command-top"><code class="cmd">!helpadmin</code><button class="copy" data-copy="!helpadmin">Copy</button></div><p>Show commands available to administrators only.</p></article>
+    </div>
+  </section>
+
+  <section class="section" id="automation" data-section>
+    <div class="section-head"><div class="section-title"><div class="section-icon">🤖</div><div><h2>Automatic Log Actions</h2><p class="section-sub">Background features running on the server</p></div></div><span class="count">AUTOMATION</span></div>
+    <div class="notice"><strong>Passive features // </strong>Welcome messages · Birthday pings · Keyword-triggers · Random emoji reactions · Sjældne loot drops · “Shhh mode” anti-spam · Ugentlig lotto.<br><br><strong>Birthday pings:</strong> Use <code class="cmd">!birthday DD-MM-YYYY</code> to register your birthday. The bot will ping you on that date using the server’s local time. Only server staff can view the full birthday list.<br><br><strong>Tip:</strong> Tip: Consider muting the log channel if it gets too noisy.</div>
+  </section>
+
+  <section class="section" id="admin" data-section>
+    <div class="section-head"><div class="section-title"><div class="section-icon">🛡️</div><div><h2>Admin Control Tools</h2><p class="section-sub">Privileged commands — use responsibly</p></div></div><span class="count">RESTRICTED</span></div>
+    <div class="admin-groups">
+      <div class="admin-group"><h3>💰 Economy</h3>
+        <article class="command" data-search="addmoney add coins user"><div class="command-top"><code class="cmd">!addmoney @user 1000</code><button class="copy" data-copy="!addmoney @user 1000">Copy</button></div><p>Add coins to a user.</p></article>
+        <article class="command" data-search="delmoney remove coins"><div class="command-top"><code class="cmd">!delmoney @user 500</code><button class="copy" data-copy="!delmoney @user 500">Copy</button></div><p>Remove coins from a user.</p></article>
+        <article class="command" data-search="resetbal reset balance casino role"><div class="command-top"><code class="cmd">!resetbal @user</code><button class="copy" data-copy="!resetbal @user">Copy</button></div><p>Reset a user’s balance or the balances of all members with the Casino role.</p></article>
+      </div>
+      <div class="admin-group"><h3>🎂 Birthday Management</h3>
+        <article class="command" data-search="birthday set user date"><div class="command-top"><code class="cmd">!birthday @user 25-12-2000</code><button class="copy" data-copy="!birthday @user 25-12-2000">Copy</button></div><p>Set another user’s birthday.</p></article>
+        <article class="command" data-search="birthday list saved"><div class="command-top"><code class="cmd">!birthday list</code><button class="copy" data-copy="!birthday list">Copy</button></div><p>List all saved birthdays.</p></article>
+        <article class="command" data-search="birthday del delete remove"><div class="command-top"><code class="cmd">!birthday del @user</code><button class="copy" data-copy="!birthday del @user">Copy</button></div><p>Delete a user’s saved birthday.</p></article>
+      </div>
+      <div class="admin-group"><h3>📜 Server Information</h3>
+        <article class="command" data-search="serverstats statistics"><div class="command-top"><code class="cmd">!serverstats</code><button class="copy" data-copy="!serverstats">Copy</button></div><p>Show server statistics.</p></article>
+        <article class="command" data-search="serverinfo server details"><div class="command-top"><code class="cmd">!serverinfo</code><button class="copy" data-copy="!serverinfo">Copy</button></div><p>Show information about the server.</p></article>
+        <article class="command" data-search="userinfo user details member"><div class="command-top"><code class="cmd">!userinfo @user</code><button class="copy" data-copy="!userinfo @user">Copy</button></div><p>Show information about a user.</p></article>
+        <article class="command" data-search="roleinfo role details"><div class="command-top"><code class="cmd">!roleinfo @role</code><button class="copy" data-copy="!roleinfo @role">Copy</button></div><p>Show information about a role.</p></article>
+      </div>
+      <div class="admin-group"><h3>📣 Logs & Promotions</h3>
+        <article class="command" data-search="log list channels"><div class="command-top"><code class="cmd">!log list</code><button class="copy" data-copy="!log list">Copy</button></div><p>List configured log channels.</p></article>
+        <article class="command" data-search="log add channel"><div class="command-top"><code class="cmd">!log add #channel</code><button class="copy" data-copy="!log add #channel">Copy</button></div><p>Add a log channel.</p></article>
+        <article class="command" data-search="log remove channel"><div class="command-top"><code class="cmd">!log remove #channel</code><button class="copy" data-copy="!log remove #channel">Copy</button></div><p>Remove a log channel.</p></article>
+        <article class="command" data-search="spam lotto promotion"><div class="command-top"><code class="cmd">!spam</code><button class="copy" data-copy="!spam">Copy</button></div><p>Post the lottery promotion in this channel and delete the command message.</p></article>
+      </div>
+      <div class="admin-group"><h3>🔒 Channel Management</h3>
+        <article class="command" data-search="lock channel messages"><div class="command-top"><code class="cmd">!lock #channel</code><button class="copy" data-copy="!lock #channel">Copy</button></div><p>Lock a channel so members cannot send messages.</p></article>
+        <article class="command" data-search="unlock channel"><div class="command-top"><code class="cmd">!unlock #channel</code><button class="copy" data-copy="!unlock #channel">Copy</button></div><p>Unlock a channel.</p></article>
+        <article class="command" data-search="say announcement message channel"><div class="command-top"><code class="cmd">!say #channel your message</code><button class="copy" data-copy="!say #channel your message">Copy</button></div><p>Send a message through the bot in the selected channel.</p></article>
+        <article class="command" data-search="channel list text channels"><div class="command-top"><code class="cmd">!channel list</code><button class="copy" data-copy="!channel list">Copy</button></div><p>List all text channels (easy to copy for !say or !lock).</p></article>
+      </div>
+      <div class="admin-group"><h3>👥 Server Management</h3>
+        <article class="command" data-search="autorole add role new members"><div class="command-top"><code class="cmd">!autorole add RoleName</code><button class="copy" data-copy="!autorole add RoleName">Copy</button></div><p>Set a role that new members automatically receive.</p></article>
+        <article class="command" data-search="autorole remove role"><div class="command-top"><code class="cmd">!autorole remove RoleName</code><button class="copy" data-copy="!autorole remove RoleName">Copy</button></div><p>Remove an autorole.</p></article>
+        <article class="command" data-search="member list server members"><div class="command-top"><code class="cmd">!member list</code><button class="copy" data-copy="!member list">Copy</button></div><p>Show the server member list.</p></article>
+        <article class="command" data-search="joinleaveinfo join leave statistics"><div class="command-top"><code class="cmd">!joinleaveinfo</code><button class="copy" data-copy="!joinleaveinfo">Copy</button></div><p>Show server join and leave statistics.</p></article>
+      </div>
+      <div class="admin-group"><h3>⚠️ Moderation</h3>
+        <article class="command" data-search="warning warn user reason"><div class="command-top"><code class="cmd">!warning @user reason</code><button class="copy" data-copy="!warning @user reason">Copy</button></div><p>Warn a user.</p></article>
+        <article class="command" data-search="mute timeout duration"><div class="command-top"><code class="cmd">!mute @user 10m</code><button class="copy" data-copy="!mute @user 10m">Copy</button></div><p>Mute a user. Supported time formats: s, m, h, and d.</p></article>
+        <article class="command" data-search="unmute user"><div class="command-top"><code class="cmd">!unmute @user</code><button class="copy" data-copy="!unmute @user">Copy</button></div><p>Unmute a user.</p></article>
+        <article class="command" data-search="kick user reason"><div class="command-top"><code class="cmd">!kick @user reason</code><button class="copy" data-copy="!kick @user reason">Copy</button></div><p>Kick a user from the server.</p></article>
+        <article class="command" data-search="ban user reason"><div class="command-top"><code class="cmd">!ban @user reason</code><button class="copy" data-copy="!ban @user reason">Copy</button></div><p>Ban a user from the server.</p></article>
+        <article class="command" data-search="clean delete messages all"><div class="command-top"><code class="cmd">!clean 50</code><button class="copy" data-copy="!clean 50">Copy</button></div><p>Delete a number of messages. Use ALL to delete all messages.</p></article>
+      </div>
+</div>
+  </section>
+  <footer><span>SERVER BOTTY // COMMAND CENTER</span><span>Created by <a href="https://github.com/Murdervan" target="_blank" rel="noopener">Murdervan</a> · © 2026</span></footer>
 </main>
-
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite">Command copied</div>
+<script>
+const search = document.getElementById('search');
+const commands = [...document.querySelectorAll('.command')];
+const sections = [...document.querySelectorAll('[data-section]')];
+const empty = document.getElementById('empty');
+const toast = document.getElementById('toast');
+let toastTimer;
+search.addEventListener('input', () => {
+  const q = search.value.trim().toLowerCase();
+  let total = 0;
+  commands.forEach(card => {
+    const haystack = (card.innerText + ' ' + (card.dataset.search || '')).toLowerCase();
+    const match = !q || haystack.includes(q);
+    card.hidden = !match;
+    if (match) total++;
+  });
+  sections.forEach(section => {
+    const visible = [...section.querySelectorAll('.command')].some(card => !card.hidden);
+    section.hidden = !visible && !!q;
+  });
+  empty.style.display = total ? 'none' : 'block';
+});
+function showToast(message) {
+  toast.textContent = message;
+  toast.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toast.classList.remove('show'), 1600);
+}
+document.querySelectorAll('[data-copy]').forEach(button => {
+  button.addEventListener('click', async () => {
+    const text = button.dataset.copy;
+    try {
+      await navigator.clipboard.writeText(text);
+      showToast('Copied: ' + text);
+    } catch (err) {
+      const temp = document.createElement('textarea');
+      temp.value = text; temp.setAttribute('readonly', '');
+      temp.style.position = 'fixed'; temp.style.opacity = '0';
+      document.body.appendChild(temp); temp.select();
+      const ok = document.execCommand('copy'); temp.remove();
+      showToast(ok ? 'Copied: ' + text : 'Copy failed — select the command manually');
+    }
+  });
+});
+const navLinks = [...document.querySelectorAll('.nav a')];
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navLinks.forEach(link => link.classList.toggle('active', link.hash === '#' + entry.target.id));
+    }
+  });
+}, {rootMargin:'-15% 0px -70% 0px'});
+document.querySelectorAll('main > section, #overview').forEach(section => observer.observe(section));
+</script>
 </body>
 </html>
